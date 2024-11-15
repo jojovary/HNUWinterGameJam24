@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 500.0
 const DECELARATION = 5.0
 const ACCELERATION = 5.0
 const JUMP_VELOCITY = -400.0
 var jump_count = 0
-const max_jump_count = 2
+const max_jump_count = 3
 var current_direction = 0
 
 func _physics_process(delta: float) -> void:
@@ -39,11 +39,6 @@ func accelerate():
 		velocity.x = move_toward(velocity.x, SPEED, ACCELERATION)
 	elif current_direction == -1:
 		velocity.x = move_toward(velocity.x, -SPEED, ACCELERATION)
-	
-	print("bevor" + str(velocity.x))
-	
-	
-	print(velocity.x)
 
 
 
