@@ -83,4 +83,4 @@ tile_set = SubResource("TileSet_34k6y")
 use_kinematic_bodies = true
 
 [node name="Player" parent="." instance=ExtResource("1_ya4xl")]
-position = Vector2(475, 87)
+position = Vector2(472, 40)
