@@ -7,7 +7,7 @@ func _ready() -> void:
 	Global.cage = self.get_path()
 
 func _physics_process(delta: float) -> void:
-	print(self.get_path())
+	#print(self.get_path())
 	
 	$".".position +=  direction * delta
 

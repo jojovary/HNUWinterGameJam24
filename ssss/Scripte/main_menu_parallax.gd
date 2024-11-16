@@ -30,17 +30,17 @@ func middlebackground_vector():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		print("Mouse Click/Unclick at: ", event.position)
+		#print("Mouse Click/Unclick at: ", event.position)
 		pass
 	if event is InputEventMouseMotion:
-		print("Mouse Motion at: ", event.position)
+		#print("Mouse Motion at: ", event.position)
 		mouse_position = event.position
 		#Print the size of the viewport.
-		print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
+		#print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
 	
 func mouseplayer_vector():
-	print (mouse_position.position - $".".position)
-	
+	#print (mouse_position.position - $".".position)
+	pass
 	#offset_dash = $CollisionShape2D.position - mouse_position
 	
 	
