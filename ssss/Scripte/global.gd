@@ -22,7 +22,7 @@ func _process(delta: float):
 	if time_passed >= wait_time:
 		# release human
 		if enemies.size() > 0:
-			print(enemies[randi_range(0,enemies.size()-1)])
+			#print(enemies[randi_range(0,enemies.size()-1)])
 			var enemy = get_node(enemies[randi_range(0,enemies.size()-1)])
 			var cager = get_node(cage)
 			enemy.changeState()

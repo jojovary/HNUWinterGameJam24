@@ -5,11 +5,17 @@ const SPEED = 200.0
 const DECELERATION = 5.0
 const JUMP_VELOCITY = -400.0
 var facing = 1
-var attack_animation = false
+var whip_attack_anim = false
+var slash_attack_anim
 
 
 func _ready():
-	$PlayerSpriteAttack.hide()
+	$WhipSprite.hide()
+	$SlashSprite.hide()
+
+
+
+
 
 func _physics_process(delta: float) -> void:
 	_movement()
@@ -25,10 +31,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	
 	if velocity.x < 0:
-		$Sprite2D.flip_h = true
+		$PlayerSpriteMovement.flip_h = true
+		$WhipSprite.flip_h = true
+		$SlashSprite.flip_h = true	
 	elif velocity.x > 0:
-		$Sprite2D.flip_h = false
-		
+		$PlayerSpriteMovement.flip_h = false
+		$WhipSprite.flip_h = false
+		$SlashSprite.flip_h = false
 		
 
 	
@@ -44,35 +53,54 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 func _animation_check():
-	if attack_animation == true:
+	if slash_attack_anim == true:
+		$PlayerSpriteMovement.hide()
+		$WhipSprite.hide()
+		$SlashSprite.show()
+	elif whip_attack_anim:
 		$PlayerSpriteMovement.hide()
 		$WhipSprite.show()
-	if attack_animation == false:
+		$SlashSprite.hide()
+	elif !slash_attack_anim:
 		$PlayerSpriteMovement.show()
 		$WhipSprite.hide()
+		$SlashSprite.hide()
+	elif !whip_attack_anim:
+		$PlayerSpriteMovement.show()
+		$WhipSprite.hide()
+		$SlashSprite.hide()
+		
 		
 func _attacks():
 	if Input.is_action_just_pressed("Whip"):
-		$PlayerAnimationAttack.play("Whip")
+		$PlayerAnimationAttackWhip.play("Whip")
+		whip_attack_anim = true
 		
 	if Input.is_action_just_pressed("Slash"):	
-		$PlayerSpriteAttack.play("Slash")
+		$PlayerAnimationAttackSlash.play("Slash")
+		slash_attack_anim = true
 	
 func _movement():
 		if Input.is_action_just_pressed("ui_left") or 	Input.is_action_just_pressed("ui_right") or is_on_floor():
 			$PlayerSpriteMovement.play("Walk")
-		if  not is_on_floor() and attack_animation ==false:
+		if  not is_on_floor() and slash_attack_anim == false and whip_attack_anim == false:
 			$PlayerSpriteMovement.play("Jump")
 			
 #func _hitboxes():
 	#$PlayerSpriteAttack.get_frame()
 
-func _on_player_sprite_attack_animation_finished():
-	attack_animation = false
+#func _on_player_sprite_attack_animation_finished():
+	#attack_animation = false
+#
+#
+#func _on_player_sprite_attack_frame_changed():
+	#attack_animation = true
 
 
-func _on_player_sprite_attack_frame_changed():
-	attack_animation = true
 
 
-	
+func _on_player_animation_attack_whip_animation_finished(Whip):
+	whip_attack_anim = false
+
+func _on_player_animation_attack_slash_animation_finished(Slash):
+	slash_attack_anim = false

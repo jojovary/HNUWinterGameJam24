@@ -28,8 +28,9 @@ func _physics_process(delta: float) -> void:
 	
 func _ready():
 	player_target =  $".".position
-
-
+	$WhipHitbox.disable() 
+	$SlashHitbox.disable()
+	
 func jump(delta):
 	 # while the player is jumping gravity should affect him
 	if not is_on_floor():
