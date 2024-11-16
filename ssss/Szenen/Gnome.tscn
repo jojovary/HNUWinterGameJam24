@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://brcd56u4l5i2s"]
+
+[ext_resource type="Texture2D" uid="uid://b3fd5n4dkfn5d" path="res://Sprites/WorkingSprites/Enviroment/Cage_Servant_Walk.png" id="1_n6en7"]
+[ext_resource type="Script" path="res://Scripte/gnome.gd" id="2_pwdyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61ul3"]
+atlas = ExtResource("1_n6en7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d2gw"]
+atlas = ExtResource("1_n6en7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0kis"]
+atlas = ExtResource("1_n6en7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x5e6"]
+atlas = ExtResource("1_n6en7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cese3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61ul3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d2gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0kis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x5e6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cese3")
+script = ExtResource("2_pwdyo")

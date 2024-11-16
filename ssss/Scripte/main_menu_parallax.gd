@@ -17,11 +17,11 @@ func middlemouse_vector():
 	#print (str(offset.y) + " + " + str(offset.x))
 func middlebackground_vector():
 	if typeof(mouse_position) != TYPE_INT:
-		$"../ParallaxAtHome/MovingBackground".position = offset * -0.02
-		$"../ParallaxAtHome/BGMountainBlack".position = offset * -0.04
-		$"../ParallaxAtHome/BGMountainGray".position = offset * -0.08
-		$"../ParallaxAtHome/BGMountainGrey".position = offset * -0.16
-		$"../ParallaxAtHome/BGGrey".position = offset * -0.19
+		$"../ParallaxAtHome/BGMountainBlack2".position = offset * -0
+		$"../ParallaxAtHome/BGMountainBlack".position = offset * -0.06
+		$"../ParallaxAtHome/BGMountainGray".position = offset * -0.13
+		$"../ParallaxAtHome/BGMountainGrey".position = offset * -0.19
+		$"../ParallaxAtHome/BGGrey".position = offset * -0.28
 
 #func _input(event):
 	##if you press the mouse button and your mouse is inside of your area the the player moves

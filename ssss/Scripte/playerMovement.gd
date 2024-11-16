@@ -46,10 +46,10 @@ func _physics_process(delta: float) -> void:
 func _animation_check():
 	if attack_animation == true:
 		$PlayerSpriteMovement.hide()
-		$Sprite2D2.show()
+		$WhipSprite.show()
 	if attack_animation == false:
 		$PlayerSpriteMovement.show()
-		$Sprite2D2.hide()
+		$WhipSprite.hide()
 		
 func _attacks():
 	if Input.is_action_just_pressed("Whip"):

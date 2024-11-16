@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://dt2nuj67k2ely"]
+
+[ext_resource type="Script" path="res://Scripte/main_menu.gd" id="1_3og4u"]
+[ext_resource type="Texture2D" uid="uid://bftc8ol0vhupm" path="res://Sprites/WorkingSprites/Menu/Menu_BG5.png" id="2_26w47"]
+[ext_resource type="Texture2D" uid="uid://55g22fro5e31" path="res://Sprites/WorkingSprites/Menu/Menu_BG4.png" id="3_p7sus"]
+[ext_resource type="Texture2D" uid="uid://bupmx2533r6sf" path="res://Sprites/WorkingSprites/Menu/Menu_BG3.png" id="4_7sj22"]
+[ext_resource type="Texture2D" uid="uid://cpqcgwnk64joi" path="res://Sprites/WorkingSprites/Menu/Menu_BG2.png" id="5_4pl16"]
+[ext_resource type="Texture2D" uid="uid://bwh6vq8w1t717" path="res://Sprites/WorkingSprites/Menu/Menu_BG1.png" id="6_xig2c"]
+[ext_resource type="Script" path="res://Scripte/main_menu_parallax.gd" id="7_ehb3m"]
+[ext_resource type="Texture2D" uid="uid://csms3e3xxwq5f" path="res://Sprites/WorkingSprites/Menu/StartGrey.png" id="8_x5t3f"]
+[ext_resource type="Texture2D" uid="uid://bpub174qi0ow0" path="res://Sprites/WorkingSprites/Menu/Start.png" id="9_6hfm2"]
+[ext_resource type="Texture2D" uid="uid://dlgu4he381gnv" path="res://Sprites/WorkingSprites/Menu/ExitGrey.png" id="10_iweqm"]
+[ext_resource type="Texture2D" uid="uid://cov2s4hwvjl38" path="res://Sprites/WorkingSprites/Menu/Exit.png" id="11_30dts"]
+
+[node name="StartMenuSzene" type="Node2D"]
+script = ExtResource("1_3og4u")
+
+[node name="ParallaxAtHome" type="Node2D" parent="."]
+
+[node name="BGGrey" type="TextureRect" parent="ParallaxAtHome"]
+offset_top = -145.0
+offset_right = 640.0
+offset_bottom = 405.0
+scale = Vector2(1, 1.4)
+texture = ExtResource("2_26w47")
+
+[node name="BGMountainGrey" type="TextureRect" parent="ParallaxAtHome"]
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 384.0
+texture = ExtResource("3_p7sus")
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxAtHome"]
+offset_top = 365.0
+offset_right = 640.0
+offset_bottom = 405.0
+color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[node name="BGMountainGray" type="TextureRect" parent="ParallaxAtHome"]
+texture_filter = 1
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 404.0
+texture = ExtResource("4_7sj22")
+
+[node name="BGMountainBlack" type="TextureRect" parent="ParallaxAtHome"]
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 384.0
+texture = ExtResource("5_4pl16")
+
+[node name="BGMountainBlack2" type="TextureRect" parent="ParallaxAtHome"]
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 384.0
+texture = ExtResource("6_xig2c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 384
+
+[node name="MarkerCenter" type="Marker2D" parent="."]
+position = Vector2(320, 192)
+script = ExtResource("7_ehb3m")
+
+[node name="Start" type="TextureButton" parent="."]
+offset_left = 240.0
+offset_top = 128.0
+offset_right = 400.0
+offset_bottom = 192.0
+texture_normal = ExtResource("8_x5t3f")
+texture_pressed = ExtResource("9_6hfm2")
+texture_hover = ExtResource("9_6hfm2")
+texture_disabled = ExtResource("8_x5t3f")
+texture_focused = ExtResource("9_6hfm2")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 240.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 263.0
+texture_normal = ExtResource("10_iweqm")
+texture_pressed = ExtResource("11_30dts")
+texture_hover = ExtResource("11_30dts")
+texture_disabled = ExtResource("10_iweqm")
+texture_focused = ExtResource("11_30dts")
+
+[connection signal="pressed" from="Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_button_quit_pressed"]

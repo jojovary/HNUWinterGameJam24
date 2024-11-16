@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SSSS"
-run/main_scene="res://Szenen/PrototypeLevel.tscn"
+run/main_scene="res://Szenen/StartMenuSzene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
