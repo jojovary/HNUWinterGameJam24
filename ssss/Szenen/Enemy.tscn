@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bt02wfefm3icm"]
+[gd_scene load_steps=11 format=3 uid="uid://bt02wfefm3icm"]
 
 [ext_resource type="Script" path="res://Scripte/enemy.gd" id="1_06yx2"]
 [ext_resource type="Texture2D" uid="uid://dsokin0tdqwvp" path="res://Sprites/Prototyping Assets/tilemap-characters_packed.png" id="1_cgeib"]
+[ext_resource type="Script" path="res://Scripte/enemyAI.gd" id="1_i85jl"]
 [ext_resource type="Texture2D" uid="uid://bfumfautjm32h" path="res://Sprites/WorkingSprites/Enemy_Zombie_Walk.png" id="3_b5lw7"]
 [ext_resource type="Script" path="res://Scripte/zombie_sprite.gd" id="4_1fpno"]
 
@@ -37,10 +38,19 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Enemy" type="Area2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_i85jl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_linvy")
+
+[node name="Enemy" type="Area2D" parent="."]
 script = ExtResource("1_06yx2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("CapsuleShape2D_linvy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 visible = false
 position = Vector2(3.57628e-07, -3.57628e-07)
 scale = Vector2(0.666667, 0.666667)
@@ -49,14 +59,23 @@ hframes = 9
 vframes = 3
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_linvy")
-
-[node name="ZombieSprite" type="AnimatedSprite2D" parent="."]
+[node name="ZombieSprite" type="AnimatedSprite2D" parent="Enemy"]
 sprite_frames = SubResource("SpriteFrames_7hnq1")
 animation = &"Walk"
-frame_progress = 0.101887
+frame_progress = 0.637251
 script = ExtResource("4_1fpno")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="GroundDetectorRight" type="RayCast2D" parent="."]
+position = Vector2(13, 13)
+scale = Vector2(2.08, 1)
+target_position = Vector2(0, 8)
+collide_with_areas = true
+
+[node name="GroundDetectorLeft" type="RayCast2D" parent="."]
+position = Vector2(-8, 0)
+scale = Vector2(2.09749, 1.15131)
+target_position = Vector2(-4.76759, 0)
+collide_with_areas = true
+
+[connection signal="body_entered" from="Enemy" to="Enemy" method="_on_body_entered"]
+[connection signal="body_exited" from="Enemy" to="Enemy" method="_on_body_exited"]

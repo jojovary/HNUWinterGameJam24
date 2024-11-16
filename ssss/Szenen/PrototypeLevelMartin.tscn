@@ -188,16 +188,16 @@ tile_map_data = PackedByteArray("AAAnAP//AAAEAAEAAAAnAAAAAAAEAAEAAAAnAAEAAAAEAAE
 tile_set = SubResource("TileSet_t8g7d")
 
 [node name="Enemy" parent="." instance=ExtResource("6_dsk7r")]
-position = Vector2(175, 247)
+position = Vector2(183, 235)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_dsk7r")]
-position = Vector2(297, 195)
+position = Vector2(291, 189)
 
 [node name="Enemy3" parent="." instance=ExtResource("6_dsk7r")]
-position = Vector2(376, 136)
+position = Vector2(359, 123)
 
 [node name="Enemy4" parent="." instance=ExtResource("6_dsk7r")]
-position = Vector2(271, 310)
+position = Vector2(257, 299)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_8bwvx")]
 visible = false
