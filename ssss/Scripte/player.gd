@@ -13,7 +13,7 @@ var jump_count = 0
 const max_jump_count = 3
 var current_direction = 0
 
-
+signal kill
 
 
 func _physics_process(delta: float) -> void:
@@ -64,6 +64,9 @@ func eat():
 		if Global.enemyInRange != null:
 			Global.enemyInRange.queue_free()
 			Global.enemyInRange = null
+			
+			emit_signal("kill")
+			
 
 
 

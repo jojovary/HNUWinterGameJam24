@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgdrfjqaekkxi"]
+
+[ext_resource type="Texture2D" uid="uid://bin6m6hkfl1p7" path="res://Sprites/Prototyping Assets/Background_1.png" id="1_ni4i3"]
+[ext_resource type="FontFile" uid="uid://d0g3kk1x8fhaf" path="res://Sprites/Prototyping Assets/MGS2.ttf" id="2_xu8j4"]
+[ext_resource type="Script" path="res://Scripte/start_button.gd" id="3_ft5b2"]
+
+[node name="DeathScreen" type="Node2D"]
+
+[node name="Background1" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_ni4i3")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 263.0
+offset_top = 160.0
+offset_right = 439.0
+offset_bottom = 249.0
+theme_override_colors/table_border = Color(1, 0, 0, 1)
+theme_override_colors/default_color = Color(0.839216, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_xu8j4")
+theme_override_font_sizes/normal_font_size = 37
+theme_override_font_sizes/bold_font_size = 11
+text = "
+YOU DIED"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 282.0
+offset_top = 245.0
+offset_right = 322.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("2_xu8j4")
+text = "Try again
+"
+script = ExtResource("3_ft5b2")
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

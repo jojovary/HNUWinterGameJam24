@@ -1,15 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw57k6guerdyq"]
+[gd_scene load_steps=10 format=3 uid="uid://bt02wfefm3icm"]
 
 [ext_resource type="Script" path="res://Scripte/enemy.gd" id="1_06yx2"]
 [ext_resource type="Texture2D" uid="uid://dsokin0tdqwvp" path="res://Sprites/Prototyping Assets/tilemap-characters_packed.png" id="1_cgeib"]
+[ext_resource type="Texture2D" uid="uid://bfumfautjm32h" path="res://Sprites/WorkingSprites/Enemy_Zombie_Walk.png" id="3_b5lw7"]
+[ext_resource type="Script" path="res://Scripte/zombie_sprite.gd" id="4_1fpno"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cberp"]
-radius = 12.0416
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_linvy"]
+height = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psn55"]
+atlas = ExtResource("3_b5lw7")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txb70"]
+atlas = ExtResource("3_b5lw7")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ym2"]
+atlas = ExtResource("3_b5lw7")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hnq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psn55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txb70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ym2")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
 
 [node name="Enemy" type="Area2D"]
 script = ExtResource("1_06yx2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(3.57628e-07, -3.57628e-07)
 scale = Vector2(0.666667, 0.666667)
 texture = ExtResource("1_cgeib")
@@ -18,7 +50,13 @@ vframes = 3
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_cberp")
+shape = SubResource("CapsuleShape2D_linvy")
+
+[node name="ZombieSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7hnq1")
+animation = &"Walk"
+frame_progress = 0.101887
+script = ExtResource("4_1fpno")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

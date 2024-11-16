@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="1_ya4xl"]
 [ext_resource type="Texture2D" uid="uid://k3dw0jfdylj3" path="res://Sprites/Prototyping Assets/Ground_Tiles.png" id="2_3y10q"]
-[ext_resource type="PackedScene" uid="uid://dw57k6guerdyq" path="res://Szenen/Enemy.tscn" id="3_h8dj6"]
+[ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="3_h8dj6"]
 [ext_resource type="Texture2D" uid="uid://knake7jkprwf" path="res://Sprites/Prototyping Assets/bg layer 1.png" id="4_1lwug"]
 [ext_resource type="Texture2D" uid="uid://cnww7aapx5xvw" path="res://Sprites/Prototyping Assets/mountainsgrey.png" id="5_5b1yq"]
 [ext_resource type="Texture2D" uid="uid://276m072vdkyn" path="res://Sprites/Prototyping Assets/mountainsgray.png" id="6_afajh"]
@@ -143,7 +143,7 @@ texture = ExtResource("2_3y10q")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_te6gn")
 
-[node name="PrototypeLevel" type="Node2D"]
+[node name="PrototypeLevel2" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -257,6 +257,7 @@ tile_set = SubResource("TileSet_34k6y")
 use_kinematic_bodies = true
 
 [node name="Player" parent="." instance=ExtResource("1_ya4xl")]
+position = Vector2(193, 67)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_4ih6d")
