@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://cyh1lko0q77da"]
+
+[ext_resource type="AudioStream" uid="uid://bgpsmgyjopd2t" path="res://Audio/HNU Gamejam S_Team Demo 1.mp3" id="1_coajb"]
+[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level1.tscn" id="2_sua7a"]
+[ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="3_4blr5"]
+[ext_resource type="Texture2D" uid="uid://bv0cru5mwbiom" path="res://Sprites/WorkingSprites/HeroConcept.png" id="4_albvy"]
+[ext_resource type="Texture2D" uid="uid://bc4vbrd531s51" path="res://Sprites/WorkingSprites/Cage_Left.png" id="5_er2lq"]
+[ext_resource type="Texture2D" uid="uid://buwdudl1cfpbl" path="res://Sprites/WorkingSprites/Cage_Mid.png" id="6_uy2aj"]
+[ext_resource type="Texture2D" uid="uid://bsgw0wtb6xqn4" path="res://Sprites/WorkingSprites/Cage_Right.png" id="7_17sya"]
+[ext_resource type="Texture2D" uid="uid://b0vdy3csh3i84" path="res://Sprites/WorkingSprites/MouthOfMadness.png" id="8_vws44"]
+[ext_resource type="PackedScene" uid="uid://dtw5hda1rjuby" path="res://Szenen/Cage.tscn" id="9_over0"]
+[ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="10_cjkn2"]
+[ext_resource type="PackedScene" uid="uid://47t4f3dy208j" path="res://Szenen/parallax_background_prototyp.tscn" id="11_wwqv1"]
+
+[node name="PrototypeLevel2" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_coajb")
+autoplay = true
+
+[node name="Level1" parent="." instance=ExtResource("2_sua7a")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("3_4blr5")]
+position = Vector2(536, 328)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("3_4blr5")]
+position = Vector2(600, 328)
+
+[node name="HeroConcept" type="Sprite2D" parent="Enemies"]
+position = Vector2(424, 336)
+texture = ExtResource("4_albvy")
+
+[node name="CageLeft" type="Sprite2D" parent="Enemies"]
+position = Vector2(480, 328)
+texture = ExtResource("5_er2lq")
+
+[node name="CageMid" type="Sprite2D" parent="Enemies"]
+position = Vector2(568, 328)
+texture = ExtResource("6_uy2aj")
+
+[node name="CageMid2" type="Sprite2D" parent="Enemies"]
+position = Vector2(536, 328)
+texture = ExtResource("6_uy2aj")
+
+[node name="CageMid3" type="Sprite2D" parent="Enemies"]
+position = Vector2(504, 328)
+texture = ExtResource("6_uy2aj")
+
+[node name="CageMid4" type="Sprite2D" parent="Enemies"]
+position = Vector2(600, 328)
+texture = ExtResource("6_uy2aj")
+
+[node name="CageRight" type="Sprite2D" parent="Enemies"]
+position = Vector2(624, 328)
+texture = ExtResource("7_17sya")
+
+[node name="MouthOfMadness" type="Sprite2D" parent="Enemies"]
+position = Vector2(672, 280)
+texture = ExtResource("8_vws44")
+
+[node name="Cage" parent="." instance=ExtResource("9_over0")]
+visible = false
+position = Vector2(560, 344)
+
+[node name="Player" parent="." instance=ExtResource("10_cjkn2")]
+position = Vector2(367, 343)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("11_wwqv1")]
