@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b1m00aa2284ng"]
+[gd_scene load_steps=9 format=4 uid="uid://dy4ae2gn8w167"]
 
 [ext_resource type="PackedScene" uid="uid://47t4f3dy208j" path="res://Szenen/parallax_background_prototyp.tscn" id="1_8bwvx"]
 [ext_resource type="Texture2D" uid="uid://k3dw0jfdylj3" path="res://Sprites/Prototyping Assets/Ground_Tiles.png" id="1_017qh"]
