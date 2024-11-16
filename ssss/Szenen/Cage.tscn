@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtw5hda1rjuby"]
 
-[ext_resource type="Texture2D" uid="uid://cro8qu5ubq0l4" path="res://icon.svg" id="1_5wt16"]
 [ext_resource type="Script" path="res://Scripte/cage.gd" id="1_7021u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13nl8"]
 size = Vector2(160, 16)
+
+[sub_resource type="TileSet" id="TileSet_p7lt8"]
 
 [node name="Cage" type="AnimatableBody2D"]
 collision_layer = 4
@@ -14,10 +15,8 @@ script = ExtResource("1_7021u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_13nl8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3.8147e-06, 0)
-scale = Vector2(1.25, 0.125)
-texture = ExtResource("1_5wt16")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -152)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_p7lt8")
