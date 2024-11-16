@@ -13,6 +13,10 @@ func _process(delta):
 func middleplayer_vector():
 	#print ($"../Player".position - $".".position)
 	offset = $"../Player".position - $".".position
-	print (str(offset.y) + " + " + str(offset.x))
+	#print (str(offset.y) + " + " + str(offset.x))
 func middlebackground_vector():
-	$"../MovingBackground".position = offset * -0.19
+	$"../MovingBackground".position = offset * -0.03
+	$"../BGMountainBlack".position = offset * -0.07
+	$"../BGMountainGray".position = offset * -0.11
+	$"../BGMountainGrey".position = offset * -0.15
+	$"../BGGrey".position = offset * -0.19

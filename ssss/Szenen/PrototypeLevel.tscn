@@ -74,7 +74,7 @@ texture = ExtResource("2_3y10q")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_te6gn")
 
-[node name="PrototypeLevel" type="Node2D"]
+[node name="PrototypeLevel2" type="Node2D"]
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true

@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://b1m00aa2284ng"]
+[gd_scene load_steps=13 format=4 uid="uid://b1m00aa2284ng"]
 
 [ext_resource type="PackedScene" uid="uid://47t4f3dy208j" path="res://Szenen/parallax_background_prototyp.tscn" id="1_8bwvx"]
 [ext_resource type="Texture2D" uid="uid://k3dw0jfdylj3" path="res://Sprites/Prototyping Assets/Ground_Tiles.png" id="1_017qh"]
+[ext_resource type="Texture2D" uid="uid://knake7jkprwf" path="res://Sprites/Prototyping Assets/bg layer 1.png" id="1_smbpi"]
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="2_rekgb"]
+[ext_resource type="Texture2D" uid="uid://cnww7aapx5xvw" path="res://Sprites/Prototyping Assets/mountainsgrey.png" id="2_tgk4w"]
+[ext_resource type="Texture2D" uid="uid://276m072vdkyn" path="res://Sprites/Prototyping Assets/mountainsgray.png" id="3_vk4pf"]
 [ext_resource type="Script" path="res://Scripte/middle_player_distance.gd" id="4_54fn6"]
+[ext_resource type="Texture2D" uid="uid://de16g1bgi8pqw" path="res://Sprites/Prototyping Assets/mountainsblack.png" id="4_kohdd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bs0jc"]
 texture = ExtResource("1_017qh")
@@ -138,6 +142,39 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_te6gn")
 
 [node name="PrototypeLevel" type="Node2D"]
+
+[node name="BGGrey" type="TextureRect" parent="."]
+offset_top = -145.0
+offset_right = 640.0
+offset_bottom = 405.0
+scale = Vector2(1, 1.4)
+texture = ExtResource("1_smbpi")
+
+[node name="BGMountainGrey" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 384.0
+texture = ExtResource("2_tgk4w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 365.0
+offset_right = 640.0
+offset_bottom = 405.0
+color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[node name="BGMountainGray" type="TextureRect" parent="."]
+texture_filter = 1
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 404.0
+texture = ExtResource("3_vk4pf")
+
+[node name="BGMountainBlack" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 384.0
+texture = ExtResource("4_kohdd")
 
 [node name="MovingBackground" type="TileMapLayer" parent="."]
 texture_filter = 1
