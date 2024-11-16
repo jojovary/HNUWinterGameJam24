@@ -38,7 +38,9 @@ size = Vector2(174, 105)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yj0b"]
 size = Vector2(188, 32)
 
-[node name="StaticBody2D" type="Area2D"]
+[node name="DoorToHell" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_8i58v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
