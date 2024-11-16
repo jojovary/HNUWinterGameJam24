@@ -21,8 +21,8 @@ func _process(delta):
 
 
 func _on_blood_timer_timeout():
-	get_tree().change_scene_to_file("res://Szenen/death_screen.tscn")
-
+	#get_tree().change_scene_to_file("res://Szenen/death_screen.tscn")
+	pass
 
 func _on_player_kill():
 	timer.start()

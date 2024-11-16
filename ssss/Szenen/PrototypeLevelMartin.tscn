@@ -201,7 +201,6 @@ position = Vector2(257, 299)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_8bwvx")]
 visible = false
-follow_viewport_enabled = false
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
