@@ -20,10 +20,73 @@ autoplay = true
 position = Vector2(536, 312)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("3_h8dj6")]
-position = Vector2(600, 312)
+position = Vector2(600, 192)
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(584, 120)
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(528, 88)
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(584, 40)
+
+[node name="Enemy13" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(648, 16)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(512, 160)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(536, 248)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(616, 80)
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(544, 168)
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(616, 136)
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(552, 56)
+
+[node name="Enemy14" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(552, 112)
+
+[node name="Enemy15" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(576, 160)
+
+[node name="Enemy16" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(584, 88)
+
+[node name="Enemy17" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(616, 32)
+
+[node name="Enemy18" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(592, 232)
+
+[node name="Enemy19" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(584, 272)
+
+[node name="Enemy20" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(528, 208)
+
+[node name="Enemy21" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(512, 272)
+
+[node name="Enemy22" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(632, 224)
+
+[node name="Enemy23" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(656, 104)
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource("3_h8dj6")]
+position = Vector2(568, 216)
 
 [node name="Cage" parent="." instance=ExtResource("11_cspao")]
-position = Vector2(568, 344)
+position = Vector2(552, 344)
 
 [node name="Player" parent="." instance=ExtResource("1_ya4xl")]
 position = Vector2(384, 328)

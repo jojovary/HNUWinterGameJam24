@@ -247,5 +247,4 @@ offset_top = 31.0
 offset_right = 764.0
 offset_bottom = 54.0
 
-[connection signal="kill" from="Player" to="BloodTimerUI" method="_on_player_kill"]
 [connection signal="timeout" from="BloodTimerUI/BloodTimer" to="BloodTimerUI" method="_on_blood_timer_timeout"]
