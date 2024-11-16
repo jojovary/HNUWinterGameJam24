@@ -4,7 +4,7 @@ const MINSPEED = 200.0
 const MAXSPEED = 10000.0
 const DECELARATION = 80.0
 const ACCELERATION = 50.0
-const JUMP_VELOCITY = -350.0
+const JUMP_VELOCITY = -550.0
 var player_target = Vector2()
 var offset_dash = 0
 var mouse_position = 0
@@ -20,8 +20,6 @@ func _physics_process(delta: float) -> void:
 	#dash()
 	if Input.is_action_just_pressed("resetTest"):
 		get_tree().change_scene_to_file("res://Szenen/PrototypeLevel.tscn")
-	
-	
 	
 	jump(delta)
 	accelerate()
@@ -44,33 +42,39 @@ func jump(delta):
 			jump_count += 1
 
 func accelerate():
+	
+	
+	
 	if Input.is_action_pressed("ui_left"):
 		current_direction = -1
+		scale.x = scale.x * -1
 	if Input.is_action_pressed("ui_right"):
 		current_direction = 1
+		scale.x = scale.x * 1
 	
 	if abs(velocity.x) < MINSPEED:
 		velocity.x = MINSPEED
 	
 	velocity.x = abs(velocity.x) * current_direction
-	eat()
-
-func eat():
-	if Input.is_action_just_pressed("eat") && Global.playerInEatingRange:
-		if current_direction == 1:
-			velocity.x = move_toward(velocity.x, MAXSPEED, ACCELERATION)
-		elif current_direction == -1:
-			velocity.x = move_toward(velocity.x, -MAXSPEED, ACCELERATION)
-		if Global.enemyInRange != null:
-			Global.enemyInRange.queue_free()
-			Global.enemyInRange = null
-			
-			emit_signal("kill")
-			
+	
 
 
-
-
+#func eat():
+#	if Input.is_action_just_pressed("eat") && Global.playerInEatingRange:
+#		if current_direction == 1:
+#			velocity.x = move_toward(velocity.x, MAXSPEED, ACCELERATION)
+#		elif current_direction == -1:
+#			velocity.x = move_toward(velocity.x, -MAXSPEED, ACCELERATION)
+#		if Global.enemyInRange != null:
+#			Global.enemyInRange.queue_free()
+#			Global.enemyInRange = null
+#			
+#			emit_signal("kill")
+#			
+#
+#
+#
+#
 
 #func muell():
 #	# Get the input direction and handle the movement/deceleration.
