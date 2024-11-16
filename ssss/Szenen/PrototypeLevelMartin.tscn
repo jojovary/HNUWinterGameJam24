@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripte/middle_player_distance.gd" id="4_54fn6"]
 [ext_resource type="Texture2D" uid="uid://de16g1bgi8pqw" path="res://Sprites/Prototyping Assets/mountainsblack.png" id="4_kohdd"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7bg2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwnrc"]
 texture = ExtResource("1_017qh")
 0:0/0 = 0
 1:0/0 = 0
@@ -68,7 +68,7 @@ texture = ExtResource("1_017qh")
 
 [sub_resource type="TileSet" id="TileSet_t8g7d"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_k7bg2")
+sources/0 = SubResource("TileSetAtlasSource_kwnrc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kv5h"]
 texture = ExtResource("1_017qh")

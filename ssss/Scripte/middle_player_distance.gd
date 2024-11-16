@@ -15,7 +15,8 @@ func middleplayer_vector():
 	offset = $"../../Player".position - $".".position
 	#print (str(offset.y) + " + " + str(offset.x))
 func middlebackground_vector():
+	$"../MovingBackground".position = offset * -0.02
 	$"../BGMountainBlack".position = offset * -0.04
-	$"../BGMountainGray".position = offset * -0.10
-	$"../BGMountainGrey".position = offset * -0.15
+	$"../BGMountainGray".position = offset * -0.08
+	$"../BGMountainGrey".position = offset * -0.16
 	$"../BGGrey".position = offset * -0.19

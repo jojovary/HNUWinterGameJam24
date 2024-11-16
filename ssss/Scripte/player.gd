@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 const MINSPEED = 200.0
-const MAXSPEED = 500.0
-const DECELARATION = 50.0
+const MAXSPEED = 10000.0
+const DECELARATION = 80.0
 const ACCELERATION = 50.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -350.0
 var player_target = Vector2()
 var offset_dash = 0
 var mouse_position = 0
@@ -18,6 +18,11 @@ var current_direction = 0
 
 func _physics_process(delta: float) -> void:
 	#dash()
+	if Input.is_action_just_pressed("resetTest"):
+		get_tree().change_scene_to_file("res://Szenen/PrototypeLevel.tscn")
+	
+	
+	
 	jump(delta)
 	accelerate()
 	move_and_slide()
@@ -44,7 +49,6 @@ func accelerate():
 	if Input.is_action_pressed("ui_right"):
 		current_direction = 1
 	
-	print(velocity.x)
 	if abs(velocity.x) < MINSPEED:
 		velocity.x = MINSPEED
 	
@@ -60,7 +64,7 @@ func eat():
 		if Global.enemyInRange != null:
 			Global.enemyInRange.queue_free()
 			Global.enemyInRange = null
-	print(Global.playerInEatingRange)
+
 
 
 
