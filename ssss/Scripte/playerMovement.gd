@@ -5,8 +5,17 @@ const SPEED = 200.0
 const DECELERATION = 5.0
 const JUMP_VELOCITY = -400.0
 var facing = 1
+var attack_animation = false
+
+
+func _ready():
+	$PlayerSpriteAttack.hide()
 
 func _physics_process(delta: float) -> void:
+	_movement()
+	_attacks()
+	_animation_check()
+	#_hitboxes()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -19,8 +28,9 @@ func _physics_process(delta: float) -> void:
 		$Sprite2D.flip_h = true
 	elif velocity.x > 0:
 		$Sprite2D.flip_h = false
-	
-	
+		
+		
+
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -33,3 +43,36 @@ func _physics_process(delta: float) -> void:
 
 	
 	move_and_slide()
+func _animation_check():
+	if attack_animation == true:
+		$PlayerSpriteMovement.hide()
+		$Sprite2D2.show()
+	if attack_animation == false:
+		$PlayerSpriteMovement.show()
+		$Sprite2D2.hide()
+		
+func _attacks():
+	if Input.is_action_just_pressed("Whip"):
+		$PlayerAnimationAttack.play("Whip")
+		
+	if Input.is_action_just_pressed("Slash"):	
+		$PlayerSpriteAttack.play("Slash")
+	
+func _movement():
+		if Input.is_action_just_pressed("ui_left") or 	Input.is_action_just_pressed("ui_right") or is_on_floor():
+			$PlayerSpriteMovement.play("Walk")
+		if  not is_on_floor() and attack_animation ==false:
+			$PlayerSpriteMovement.play("Jump")
+			
+#func _hitboxes():
+	#$PlayerSpriteAttack.get_frame()
+
+func _on_player_sprite_attack_animation_finished():
+	attack_animation = false
+
+
+func _on_player_sprite_attack_frame_changed():
+	attack_animation = true
+
+
+	
