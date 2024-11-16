@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceebc4l465n4c"]
+[gd_scene load_steps=16 format=3 uid="uid://ceebc4l465n4c"]
 
+[ext_resource type="Texture2D" uid="uid://hkhn5rr645im" path="res://Sprites/WorkingSprites/Background/bg.png" id="1_eqw0p"]
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="1_ya4xl"]
+[ext_resource type="Texture2D" uid="uid://ca2nlh2xrpr08" path="res://Sprites/WorkingSprites/Background/collums.png" id="2_7oj5u"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="3_h8dj6"]
-[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level1.tscn" id="5_do6im"]
+[ext_resource type="Texture2D" uid="uid://cskhwc1d7enai" path="res://Sprites/WorkingSprites/Background/grey.png" id="3_xdmlb"]
+[ext_resource type="Texture2D" uid="uid://djrute2p73rle" path="res://Sprites/WorkingSprites/Background/spikes.png" id="4_ecxpx"]
+[ext_resource type="PackedScene" path="res://Szenen/Level1.tscn" id="5_do6im"]
 [ext_resource type="Texture2D" uid="uid://2ap1f138dh7r" path="res://Sprites/WorkingSprites/Enviroment/MouthOfMadness_Anim.png" id="6_buorq"]
 [ext_resource type="Script" path="res://Scripte/gnome.gd" id="7_qpqa6"]
 [ext_resource type="AudioStream" uid="uid://bgpsmgyjopd2t" path="res://Audio/HNU Gamejam S_Team Demo 1.mp3" id="10_4ih6d"]
-[ext_resource type="PackedScene" uid="uid://dtw5hda1rjuby" path="res://Szenen/Cage.tscn" id="11_cspao"]
+[ext_resource type="PackedScene" path="res://Szenen/Cage.tscn" id="11_cspao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_crg3b"]
 atlas = ExtResource("6_buorq")
@@ -38,6 +42,146 @@ animations = [{
 }]
 
 [node name="PrototypeLevel2" type="Node2D"]
+
+[node name="bg" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 384.0
+texture = ExtResource("1_eqw0p")
+
+[node name="collums" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 384.0
+texture = ExtResource("2_7oj5u")
+
+[node name="grey" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 384.0
+texture = ExtResource("3_xdmlb")
+
+[node name="spikes" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 384.0
+texture = ExtResource("4_ecxpx")
+
+[node name="bg" type="TextureRect" parent="spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("1_eqw0p")
+
+[node name="collums" type="TextureRect" parent="spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("2_7oj5u")
+
+[node name="grey" type="TextureRect" parent="spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("3_xdmlb")
+
+[node name="spikes" type="TextureRect" parent="spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("4_ecxpx")
+
+[node name="bg" type="TextureRect" parent="spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("1_eqw0p")
+
+[node name="collums" type="TextureRect" parent="spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("2_7oj5u")
+
+[node name="grey" type="TextureRect" parent="spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("3_xdmlb")
+
+[node name="spikes" type="TextureRect" parent="spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("4_ecxpx")
+
+[node name="bg" type="TextureRect" parent="spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("1_eqw0p")
+
+[node name="collums" type="TextureRect" parent="spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("2_7oj5u")
+
+[node name="grey" type="TextureRect" parent="spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("3_xdmlb")
+
+[node name="spikes" type="TextureRect" parent="spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("4_ecxpx")
+
+[node name="bg" type="TextureRect" parent="spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("1_eqw0p")
+
+[node name="collums" type="TextureRect" parent="spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("2_7oj5u")
+
+[node name="grey" type="TextureRect" parent="spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("3_xdmlb")
+
+[node name="spikes" type="TextureRect" parent="spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("4_ecxpx")
+
+[node name="bg" type="TextureRect" parent="spikes/spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("1_eqw0p")
+
+[node name="collums" type="TextureRect" parent="spikes/spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("2_7oj5u")
+
+[node name="grey" type="TextureRect" parent="spikes/spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("3_xdmlb")
+
+[node name="spikes" type="TextureRect" parent="spikes/spikes/spikes/spikes/spikes"]
+offset_left = 1280.0
+offset_right = 2560.0
+offset_bottom = 384.0
+texture = ExtResource("4_ecxpx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_4ih6d")
