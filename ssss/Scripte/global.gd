@@ -19,6 +19,13 @@ func _process(delta: float):
 	# Accumulate the time passed
 	time_passed += delta
 	
+	if get_tree().current_scene != null:
+		print(get_tree().current_scene.name)
+		if get_tree().current_scene.name == "Tutorial":
+			print("TUTOIAAAAAAAAAAAAAAAAAAALL")
+			return
+	
+	
 	# Check if the wait time has passed
 	if time_passed >= wait_time:
 		# release human

@@ -21,6 +21,6 @@ func blood():
 		else:
 			var blood = bloodsplatter2.instantiate()
 			add_child(blood)
-			i.global_position.y =  i.global_position.y + randf_range(-2,2)
+			i.global_position.y =  i.global_position.y + randf_range(-1,2)
 			blood.global_position = i.global_position
 		

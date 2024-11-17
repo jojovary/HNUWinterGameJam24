@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cyh1lko0q77da"]
 
 [ext_resource type="AudioStream" uid="uid://bgpsmgyjopd2t" path="res://Audio/HNU Gamejam S_Team Demo 1.mp3" id="1_coajb"]
-[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level1.tscn" id="2_sua7a"]
+[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level/Level1.tscn" id="2_sua7a"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="3_4blr5"]
 [ext_resource type="Texture2D" uid="uid://bv0cru5mwbiom" path="res://Sprites/WorkingSprites/HeroConcept.png" id="4_albvy"]
 [ext_resource type="Texture2D" uid="uid://bc4vbrd531s51" path="res://Sprites/WorkingSprites/Cage_Left.png" id="5_er2lq"]

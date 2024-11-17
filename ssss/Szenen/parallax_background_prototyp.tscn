@@ -81,13 +81,14 @@ offset_bottom = 40.0
 texture = ExtResource("1_8gjnb")
 
 [node name="NewBackground" type="TextureRect" parent="TrueBackground"]
+modulate = Color(0.77, 0.577372, 0.1617, 1)
 texture_repeat = 2
 offset_right = 640.0
 offset_bottom = 384.0
 texture = ExtResource("2_fi07j")
 
 [node name="MountainBackground" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1.2, 1.2)
+motion_scale = Vector2(1.1, 1.1)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="TextureRect" type="TextureRect" parent="MountainBackground"]
@@ -96,8 +97,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_7akho")
 
+[node name="MountainBackground2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="TextureRect" type="TextureRect" parent="MountainBackground2"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_7akho")
+flip_v = true
+
 [node name="Spikes" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1.4, 1.4)
+motion_scale = Vector2(1.3, 1.3)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="Spikes" type="TextureRect" parent="Spikes"]
@@ -107,6 +119,7 @@ offset_bottom = 384.0
 texture = ExtResource("4_3jyko")
 
 [node name="DetailsBackground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.6, 1.6)
 motion_mirroring = Vector2(960, 0)
 
 [node name="TentaclePillarCombo" type="TextureRect" parent="DetailsBackground"]

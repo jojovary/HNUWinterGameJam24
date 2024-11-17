@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ca2nlh2xrpr08" path="res://Sprites/WorkingSprites/Background/collums.png" id="2_d3win"]
 [ext_resource type="Texture2D" uid="uid://djrute2p73rle" path="res://Sprites/WorkingSprites/Background/spikes.png" id="3_jfega"]
 [ext_resource type="AudioStream" uid="uid://bgpsmgyjopd2t" path="res://Audio/HNU Gamejam S_Team Demo 1.mp3" id="4_uxbt8"]
-[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level1.tscn" id="5_gmt8c"]
+[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level/Level1.tscn" id="5_gmt8c"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="6_6v0hg"]
 [ext_resource type="PackedScene" uid="uid://dtw5hda1rjuby" path="res://Szenen/Cage.tscn" id="7_8sibv"]
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="8_muekc"]
