@@ -77,9 +77,7 @@ texture = ExtResource("1_c4hc3")
 3:6/0 = 0
 3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:6/0 = 0
-4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:6/0 = 0
-5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:7/0 = 0
 0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:7/0 = 0
@@ -89,9 +87,7 @@ texture = ExtResource("1_c4hc3")
 3:7/0 = 0
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:7/0 = 0
-4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:7/0 = 0
-5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:8/0 = 0
 0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:8/0 = 0
@@ -115,6 +111,51 @@ tile_set = SubResource("TileSet_g8g3k")
 
 [node name="bush" parent="." instance=ExtResource("2_fngld")]
 position = Vector2(274, 321)
+
+[node name="bush9" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(210, 321)
+
+[node name="bush10" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(634, 321)
+
+[node name="bush11" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(1123, 321)
+
+[node name="bush12" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(1382, 321)
+
+[node name="bush13" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(1617, 321)
+
+[node name="bush14" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(2276, 321)
+
+[node name="bush15" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(2683, 321)
+
+[node name="bush16" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(2784, 321)
+
+[node name="bush17" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(3360, 321)
+
+[node name="bush18" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(3087, 321)
+
+[node name="bush19" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(4170, 321)
+
+[node name="bush20" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(4453, 321)
+
+[node name="bush21" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(5015, 321)
+
+[node name="bush22" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(5438, 321)
+
+[node name="bush23" parent="." instance=ExtResource("2_fngld")]
+position = Vector2(6204, 321)
 
 [node name="bush2" parent="." instance=ExtResource("2_fngld")]
 position = Vector2(905, 321)
