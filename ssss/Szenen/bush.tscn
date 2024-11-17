@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1mdij4yv6lk"]
+
+[ext_resource type="Texture2D" uid="uid://cod4voxwj5lvi" path="res://Sprites/Bush_Anim.png" id="1_rpboc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0her6"]
+atlas = ExtResource("1_rpboc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3371"]
+atlas = ExtResource("1_rpboc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kux0g"]
+atlas = ExtResource("1_rpboc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jydrw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0her6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3371")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kux0g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_tbou5"]
+script/source = "extends AnimatedSprite2D
+
+@onready var bush = $\".\"
+
+func _ready():
+	bush.play(\"default\")
+"
+
+[node name="bush" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jydrw")
+frame_progress = 0.374428
+script = SubResource("GDScript_tbou5")
