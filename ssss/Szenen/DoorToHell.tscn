@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ts6a0d2kqdka"]
+[gd_scene load_steps=10 format=3 uid="uid://ts6a0d2kqdka"]
 
 [ext_resource type="Script" path="res://Scripte/door_to_hell.gd" id="1_8i58v"]
 [ext_resource type="Texture2D" uid="uid://2ap1f138dh7r" path="res://Sprites/WorkingSprites/Enviroment/MouthOfMadness_Anim.png" id="1_jd3en"]
+[ext_resource type="Script" path="res://Scripte/bloddspawn.gd" id="3_ri61v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr68c"]
 atlas = ExtResource("1_jd3en")
@@ -33,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wa23p"]
-size = Vector2(174, 105)
+size = Vector2(188, 105)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yj0b"]
 size = Vector2(188, 32)
@@ -48,11 +49,23 @@ sprite_frames = SubResource("SpriteFrames_futyi")
 frame_progress = 0.276141
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(28, 36.5)
+position = Vector2(21, 36.5)
 shape = SubResource("RectangleShape2D_wa23p")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-39, -32)
 shape = SubResource("RectangleShape2D_8yj0b")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("3_ri61v")
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(-70, 30)
+
+[node name="Marker2D3" type="Marker2D" parent="Node2D"]
+position = Vector2(-70, 43)
+
+[node name="Marker2D2" type="Marker2D" parent="Node2D"]
+position = Vector2(-70, 58)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
