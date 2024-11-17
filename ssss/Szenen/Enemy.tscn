@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bt02wfefm3icm"]
+[gd_scene load_steps=28 format=3 uid="uid://bt02wfefm3icm"]
 
 [ext_resource type="Script" path="res://Scripte/enemyAI.gd" id="1_i85jl"]
 [ext_resource type="Texture2D" uid="uid://bfumfautjm32h" path="res://Sprites/WorkingSprites/Enemy_Zombie_Walk.png" id="3_b5lw7"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://d0y70tud5rgpn" path="res://Audio/Qualvoller Schrei neu.wav" id="5_ve6wv"]
 [ext_resource type="AudioStream" uid="uid://newvs18ffofe" path="res://Audio/Qualvoller Schrei ohne FX neu.wav" id="6_oqdem"]
 [ext_resource type="PackedScene" uid="uid://bmjogckbp7nfp" path="res://Szenen/bloodsplatter_side.tscn" id="7_v6q71"]
+[ext_resource type="Texture2D" uid="uid://khm3s1o1w5t0" path="res://Sprites/WorkingSprites/Enemy_Zombie_Die.png" id="8_xgwu6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_linvy"]
 height = 40.0
@@ -92,6 +93,56 @@ clip_1/name = &"SchreiB"
 clip_1/stream = ExtResource("6_oqdem")
 clip_1/auto_advance = 0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8lun"]
+atlas = ExtResource("8_xgwu6")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ifm1"]
+atlas = ExtResource("8_xgwu6")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i08pv"]
+atlas = ExtResource("8_xgwu6")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2jtw"]
+atlas = ExtResource("8_xgwu6")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd0qj"]
+atlas = ExtResource("8_xgwu6")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7adnw"]
+atlas = ExtResource("8_xgwu6")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oquxk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8lun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ifm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i08pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2jtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd0qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7adnw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 28
@@ -131,4 +182,11 @@ volume_db = 5.114
 visible = false
 position = Vector2(0, -5)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_oquxk")
+frame = 5
+frame_progress = 1.0
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="die_final"]

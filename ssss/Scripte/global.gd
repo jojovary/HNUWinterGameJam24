@@ -28,9 +28,9 @@ func _process(delta: float):
 	time_passed += delta
 	
 	if get_tree().current_scene != null:
-		print(get_tree().current_scene.name)
+		#print(get_tree().current_scene.name)
 		if get_tree().current_scene.name == "Tutorial":
-			print("TUTOIAAAAAAAAAAAAAAAAAAALL")
+			#print("TUTOIAAAAAAAAAAAAAAAAAAALL")
 			return
 	
 	
@@ -41,14 +41,16 @@ func _process(delta: float):
 			#print(enemies[randi_range(0,enemies.size()-1)])
 			var enemy = get_node(enemies[randi_range(0,enemies.size()-1)])
 			var cager = get_node(cage)
+			print(enemies)
 			if enemy != null:
 				enemy.changeState()
 			if cager != null:
 				cager.increaseSpeed()
-			
+		
 		# Reset the time and choose a new random wait time
 		time_passed = 0.0
 		wait_time = randf_range(1.0, 2.0)
+		
 		
 func _game_over():
 	if bloodpoints == 0:

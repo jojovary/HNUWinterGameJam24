@@ -17,6 +17,7 @@ func _on_body_entered(body):
 		Global.enemies.resize(Global.enemies.size() - 1)
 		#print(Global.enemies)
 		Global.bloodpoints = Global.bloodpoints - 5
-		body.queue_free()		##funktioniert nicht wegen Change State
-		print("SLASH!" + str(body))
+		body.getReckt()
+		#body.queue_free()		##funktioniert nicht wegen Change State
+		#print("SLASH!" + str(body))
 		

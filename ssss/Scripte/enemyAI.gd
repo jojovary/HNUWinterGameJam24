@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 enum state {CAGE,FLEETING,ANGRY, ATTACKING, JUMP, BACKTOHELL}
 var currentState = state.CAGE
 var launched = 0
+var dieing = false
 signal BloodpointsLost
 signal BloodpointsGained
 
@@ -19,6 +20,10 @@ func _ready():
 
 
 func _physics_process(delta):
+	
+	if dieing == true:
+		return
+	
 	directionFlip()
 	
 	if currentState == state.CAGE:
@@ -127,3 +132,15 @@ func change_audio_to(audio_name: String = ""):
 	if (audio_name != player_sound_manager["parameters/switch_to_clip"]):
 		player_sound_manager.play()
 		player_sound_manager["parameters/switch_to_clip"] = audio_name
+
+
+func getReckt():
+	$ZombieSprite.visible = false
+	$FlyingSprite.visible = false
+	$AnimatedSprite2D.visible = true
+	$AnimatedSprite2D.play()
+	dieing = true
+
+
+func die_final() -> void:
+	queue_free()
