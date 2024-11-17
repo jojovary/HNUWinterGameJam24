@@ -125,6 +125,7 @@ scale = Vector2(0.6, 1)
 
 [node name="EnemySoundManager" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamInteractive_hyced")
+volume_db = 5.114
 
 [node name="blood" parent="." instance=ExtResource("7_v6q71")]
 visible = false

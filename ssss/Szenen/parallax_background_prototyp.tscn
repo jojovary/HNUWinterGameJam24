@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://47t4f3dy208j"]
+[gd_scene load_steps=9 format=4 uid="uid://47t4f3dy208j"]
 
 [ext_resource type="Texture2D" uid="uid://knake7jkprwf" path="res://Sprites/Prototyping Assets/bg layer 1.png" id="1_8gjnb"]
 [ext_resource type="Texture2D" uid="uid://k3dw0jfdylj3" path="res://Sprites/Prototyping Assets/Ground_Tiles.png" id="1_fhy4d"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://lwgwita0243g" path="res://Sprites/WorkingSprites/Background/collums new.png" id="3_7akho"]
 [ext_resource type="Texture2D" uid="uid://djrute2p73rle" path="res://Sprites/WorkingSprites/Background/spikes.png" id="4_3jyko"]
 [ext_resource type="Texture2D" uid="uid://cskhwc1d7enai" path="res://Sprites/WorkingSprites/Background/grey.png" id="5_6lamq"]
-[ext_resource type="Texture2D" uid="uid://sirf6uwb0iot" path="res://Sprites/WorkingSprites/Background/skulltower.png" id="6_dxpky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqgsp"]
 texture = ExtResource("1_fhy4d")
@@ -132,13 +131,6 @@ texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_6lamq")
-
-[node name="SkullTower" type="TextureRect" parent="DetailsBackground"]
-texture_filter = 1
-offset_left = 1101.0
-offset_right = 1379.0
-offset_bottom = 384.0
-texture = ExtResource("6_dxpky")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 texture_repeat = 2
