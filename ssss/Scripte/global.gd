@@ -8,6 +8,11 @@ var cage
 var gamefinished = 0
 var cage_speed = 0
 var bloodpoints = 230
+var current_level = 1
+
+## Tutorial = 1
+## Level 1 = 2
+## etc
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

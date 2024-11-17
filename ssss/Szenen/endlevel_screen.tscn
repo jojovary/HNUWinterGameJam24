@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0mgxlhbswkr5"]
+[gd_scene load_steps=7 format=3 uid="uid://b0mgxlhbswkr5"]
 
 [ext_resource type="Script" path="res://Scripte/endlevel_screen.gd" id="1_7f38a"]
 [ext_resource type="Texture2D" uid="uid://cb156rg6le68g" path="res://Sprites/WorkingSprites/Background/Menu_Endscreen_BW.png" id="2_l2c11"]
 [ext_resource type="Texture2D" uid="uid://dt0glr8ehwjul" path="res://Sprites/WorkingSprites/Background/Menu_RESULT.png" id="3_0h43q"]
 [ext_resource type="FontFile" uid="uid://d0g3kk1x8fhaf" path="res://Sprites/Prototyping Assets/MGS2.ttf" id="4_ncixn"]
+[ext_resource type="Texture2D" uid="uid://csms3e3xxwq5f" path="res://Sprites/WorkingSprites/Menu/StartGrey.png" id="5_tuat0"]
+[ext_resource type="Texture2D" uid="uid://bpub174qi0ow0" path="res://Sprites/WorkingSprites/Menu/Start.png" id="6_iooiy"]
 
 [node name="EndlevelScreen" type="Node2D"]
 script = ExtResource("1_7f38a")
@@ -15,15 +17,29 @@ centered = false
 
 [node name="Result" type="Sprite2D" parent="."]
 position = Vector2(320, 140)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_0h43q")
 
 [node name="HighscoreLabel" type="Label" parent="."]
-offset_left = 244.0
-offset_top = 214.0
-offset_right = 284.0
-offset_bottom = 268.0
+offset_left = 247.0
+offset_top = 183.0
+offset_right = 287.0
+offset_bottom = 237.0
 theme_override_colors/font_color = Color(0.712707, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_ncixn")
 theme_override_font_sizes/font_size = 45
+
+[node name="Start" type="TextureButton" parent="."]
+offset_left = 237.0
+offset_top = 240.0
+offset_right = 397.0
+offset_bottom = 304.0
+texture_normal = ExtResource("5_tuat0")
+texture_pressed = ExtResource("6_iooiy")
+texture_hover = ExtResource("6_iooiy")
+texture_disabled = ExtResource("5_tuat0")
+texture_focused = ExtResource("6_iooiy")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
