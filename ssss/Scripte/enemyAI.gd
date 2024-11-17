@@ -81,6 +81,7 @@ func back_to_hell():
 	self.add_child(hitEffect)
 	hitEffect.global_position = self.global_position
 	currentState = state.BACKTOHELL
+	$blood.visible = true 
 
 func highway_to_hell(delta):
 	if not is_on_floor():
@@ -92,6 +93,7 @@ func highway_to_hell(delta):
 			Global.enemies.append(self.get_path())
 			$ZombieSprite.visible = true
 			$FlyingSprite.visible = false
+			$blood.visible = false
 			launched = 0
 			currentState = state.CAGE
 		else:
@@ -101,6 +103,7 @@ func highway_to_hell(delta):
 				launched = 0
 				$ZombieSprite.visible = true
 				$FlyingSprite.visible = false
+				$blood.visible = false
 				currentState = state.FLEETING
 		
 
