@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ts6a0d2kqdka"]
+[gd_scene load_steps=12 format=3 uid="uid://ts6a0d2kqdka"]
 
 [ext_resource type="Script" path="res://Scripte/door_to_hell.gd" id="1_8i58v"]
 [ext_resource type="Texture2D" uid="uid://cb52vh6q5rgvt" path="res://Sprites/WorkingSprites/Enviroment/mouthofmadnessspritesfg.png" id="2_jflrh"]
 [ext_resource type="Texture2D" uid="uid://dyyed8yeojilr" path="res://Sprites/WorkingSprites/mouthofmadnessspritesbg1 (1).png" id="2_rthny"]
 [ext_resource type="Script" path="res://Scripte/bloddspawn.gd" id="3_ri61v"]
+[ext_resource type="Texture2D" uid="uid://d01y44y53q1dp" path="res://Sprites/WorkingSprites/Enviroment/MouthOfMadness_Crown.png" id="5_606fb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8b5vm"]
 atlas = ExtResource("2_jflrh")
@@ -41,6 +42,7 @@ size = Vector2(188, 105)
 size = Vector2(1567, 1038)
 
 [node name="DoorToHell" type="Area2D"]
+position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_8i58v")
@@ -77,5 +79,9 @@ collision_mask = 0
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(662.5, -527)
 shape = SubResource("RectangleShape2D_8yj0b")
+
+[node name="MouthOfMadnessCrown" type="Sprite2D" parent="."]
+position = Vector2(-80, -315)
+texture = ExtResource("5_606fb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

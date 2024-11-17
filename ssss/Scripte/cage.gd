@@ -8,7 +8,10 @@ func _ready() -> void:
 	Global.cage_speed
 
 func _physics_process(delta: float) -> void:
-	$".".position +=  direction * delta
+	if position.x < 6120:
+		$".".position +=  direction * delta
+	else:
+		pass
 
 func increaseSpeed():
 	direction.x += peopleWeight

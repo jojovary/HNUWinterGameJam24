@@ -26,7 +26,8 @@ func _process(delta: float):
 			#print(enemies[randi_range(0,enemies.size()-1)])
 			var enemy = get_node(enemies[randi_range(0,enemies.size()-1)])
 			var cager = get_node(cage)
-			enemy.changeState()
+			if enemy != null:
+				enemy.changeState()
 			cager.increaseSpeed()
 			
 		# Reset the time and choose a new random wait time
