@@ -28,8 +28,6 @@ func _physics_process(delta):
 	if currentState == state.JUMP:
 		launch(delta)
 	
-	print(currentState)
-	
 	move_and_slide()
 
 func changeState():
@@ -114,5 +112,4 @@ func directionFlip():
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	emit_signal("BloodpointsLost")
 	Global.bloodpoints = Global.bloodpoints - 10
-	print(Global.bloodpoints)
 	queue_free()
