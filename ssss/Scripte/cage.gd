@@ -1,7 +1,7 @@
 extends AnimatableBody2D
 
 var direction = Vector2(50,0)
-const peopleWeight = 5
+const peopleWeight = 4
 
 func _ready() -> void:
 	Global.cage = self.get_path()
