@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="1_ya4xl"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="3_h8dj6"]
-[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level1.tscn" id="5_do6im"]
+[ext_resource type="PackedScene" uid="uid://b6x6gavggkw0d" path="res://Szenen/Level/Level_01.tscn" id="5_u1mie"]
 [ext_resource type="PackedScene" uid="uid://ts6a0d2kqdka" path="res://Szenen/DoorToHell.tscn" id="6_k2s3d"]
 [ext_resource type="Texture2D" uid="uid://hkhn5rr645im" path="res://Sprites/WorkingSprites/Background/bg.png" id="7_wibw5"]
 [ext_resource type="Texture2D" uid="uid://ca2nlh2xrpr08" path="res://Sprites/WorkingSprites/Background/collums.png" id="8_3mc0j"]
@@ -30,7 +30,8 @@ texture = ExtResource("9_u7hrr")
 stream = ExtResource("10_4ih6d")
 autoplay = true
 
-[node name="Level1" parent="." instance=ExtResource("5_do6im")]
+[node name="Level1" parent="." instance=ExtResource("5_u1mie")]
+position = Vector2(64, 32)
 
 [node name="Enemies" type="Node2D" parent="."]
 
