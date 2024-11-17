@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceebc4l465n4c"]
+[gd_scene load_steps=9 format=3 uid="uid://ceebc4l465n4c"]
 
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="1_ya4xl"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="3_h8dj6"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://hkhn5rr645im" path="res://Sprites/WorkingSprites/Background/bg.png" id="7_wibw5"]
 [ext_resource type="Texture2D" uid="uid://ca2nlh2xrpr08" path="res://Sprites/WorkingSprites/Background/collums.png" id="8_3mc0j"]
 [ext_resource type="Texture2D" uid="uid://djrute2p73rle" path="res://Sprites/WorkingSprites/Background/spikes.png" id="9_u7hrr"]
-[ext_resource type="AudioStream" uid="uid://bgpsmgyjopd2t" path="res://Audio/HNU Gamejam S_Team Demo 1.mp3" id="10_4ih6d"]
 [ext_resource type="PackedScene" uid="uid://dtw5hda1rjuby" path="res://Szenen/Cage.tscn" id="11_cspao"]
 
 [node name="PrototypeLevel2" type="Node2D"]
@@ -25,10 +24,6 @@ texture = ExtResource("8_3mc0j")
 [node name="Spikes" type="Sprite2D" parent="Background"]
 position = Vector2(640, 192)
 texture = ExtResource("9_u7hrr")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_4ih6d")
-autoplay = true
 
 [node name="Level1" parent="." instance=ExtResource("5_u1mie")]
 position = Vector2(64, 32)

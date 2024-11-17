@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -500.0
 var facing = 1
 var whip_attack_anim = false
 var slash_attack_anim
-
+@onready var player_sound_manager = $PlayerSoundManager
 
 func _ready():
 	$WhipSprite.hide()
@@ -29,6 +29,8 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		change_audio_to()
+		change_audio_to("Jump")
 	
 	if velocity.x < 0:
 		$PlayerSpriteMovement.flip_h = true
@@ -70,16 +72,21 @@ func _animation_check():
 		$WhipSprite.hide()
 		$SlashSprite.hide()
 		
-		
+
+
 func _attacks():
 	if Input.is_action_just_pressed("Whip"):
 		$PlayerAnimationAttackWhip.play("Whip")
 		whip_attack_anim = true
-		
+		change_audio_to()
+		change_audio_to("Peitsche")
 	if Input.is_action_just_pressed("Slash"):	
 		$PlayerAnimationAttackSlash.play("Slash")
 		slash_attack_anim = true
+		change_audio_to()
+		change_audio_to("Blut")
 	
+
 func _movement():
 		if Input.is_action_just_pressed("ui_left") or 	Input.is_action_just_pressed("ui_right") or is_on_floor():
 			$PlayerSpriteMovement.play("Walk")
@@ -96,7 +103,12 @@ func _movement():
 #func _on_player_sprite_attack_frame_changed():
 	#attack_animation = true
 
-
+func change_audio_to(audio_name: String = ""):
+	if audio_name == "":
+		player_sound_manager.stop()
+	if (audio_name != player_sound_manager["parameters/switch_to_clip"]):
+		player_sound_manager.play()
+		player_sound_manager["parameters/switch_to_clip"] = audio_name
 
 
 func _on_player_animation_attack_whip_animation_finished(Whip):

@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv3i5j5d8n8rw"]
+[gd_scene load_steps=10 format=3 uid="uid://bv3i5j5d8n8rw"]
 
 [ext_resource type="PackedScene" uid="uid://47t4f3dy208j" path="res://Szenen/parallax_background_prototyp.tscn" id="1_u2mew"]
 [ext_resource type="Texture2D" uid="uid://hkhn5rr645im" path="res://Sprites/WorkingSprites/Background/bg.png" id="1_xaj3d"]
 [ext_resource type="Texture2D" uid="uid://ca2nlh2xrpr08" path="res://Sprites/WorkingSprites/Background/collums.png" id="2_pvtii"]
 [ext_resource type="Texture2D" uid="uid://djrute2p73rle" path="res://Sprites/WorkingSprites/Background/spikes.png" id="3_2hfs7"]
 [ext_resource type="PackedScene" uid="uid://c38xce3htpm2v" path="res://Szenen/Level/Level_Tutorial.tscn" id="4_eg831"]
-[ext_resource type="AudioStream" uid="uid://bgpsmgyjopd2t" path="res://Audio/HNU Gamejam S_Team Demo 1.mp3" id="5_jqeev"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="6_a0t5j"]
 [ext_resource type="PackedScene" uid="uid://dtw5hda1rjuby" path="res://Szenen/Cage.tscn" id="7_u5e4p"]
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="8_p4snv"]
@@ -30,10 +29,6 @@ position = Vector2(640, 192)
 texture = ExtResource("3_2hfs7")
 
 [node name="Tutorial" parent="." instance=ExtResource("4_eg831")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_jqeev")
-autoplay = true
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(5096, -1)
