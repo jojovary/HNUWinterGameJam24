@@ -26,7 +26,6 @@ position = Vector2(640, 192)
 texture = ExtResource("9_u7hrr")
 
 [node name="Level1" parent="." instance=ExtResource("5_u1mie")]
-position = Vector2(64, 32)
 
 [node name="Enemies" type="Node2D" parent="."]
 
