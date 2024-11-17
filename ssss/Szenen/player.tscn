@@ -643,14 +643,14 @@ animation = &"Slash"
 frame = 4
 frame_progress = 1.0
 
-[node name="SlashHitbox" type="Area2D" parent="."]
+[node name="SlashHitbox" type="Area2D" parent="." groups=["Hitbox"]]
 collision_layer = 0
 collision_mask = 2
 monitoring = false
 monitorable = false
 script = ExtResource("7_byh00")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlashHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlashHitbox" groups=["Hitbox"]]
 position = Vector2(30, -7)
 rotation = 1.46518
 shape = SubResource("CapsuleShape2D_0fhlm")

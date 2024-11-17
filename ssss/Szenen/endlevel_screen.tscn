@@ -1,12 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0mgxlhbswkr5"]
+[gd_scene load_steps=5 format=3 uid="uid://b0mgxlhbswkr5"]
 
 [ext_resource type="Script" path="res://Scripte/endlevel_screen.gd" id="1_7f38a"]
+[ext_resource type="Texture2D" uid="uid://cb156rg6le68g" path="res://Sprites/WorkingSprites/Background/Menu_Endscreen_BW.png" id="2_l2c11"]
+[ext_resource type="Texture2D" uid="uid://dt0glr8ehwjul" path="res://Sprites/WorkingSprites/Background/Menu_RESULT.png" id="3_0h43q"]
+[ext_resource type="FontFile" uid="uid://d0g3kk1x8fhaf" path="res://Sprites/Prototyping Assets/MGS2.ttf" id="4_ncixn"]
 
 [node name="EndlevelScreen" type="Node2D"]
 script = ExtResource("1_7f38a")
 
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_l2c11")
+centered = false
+
+[node name="Result" type="Sprite2D" parent="."]
+position = Vector2(320, 140)
+texture = ExtResource("3_0h43q")
+
 [node name="HighscoreLabel" type="Label" parent="."]
-offset_left = 306.0
-offset_top = 181.0
-offset_right = 346.0
-offset_bottom = 204.0
+offset_left = 244.0
+offset_top = 214.0
+offset_right = 284.0
+offset_bottom = 268.0
+theme_override_colors/font_color = Color(0.712707, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_ncixn")
+theme_override_font_sizes/font_size = 45

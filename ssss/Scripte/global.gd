@@ -16,6 +16,9 @@ func _ready():
 
 # Called every frame. Delta is the elapsed time since the last frame.
 func _process(delta: float):
+	#print(bloodpoints)
+	##gameover check
+	_game_over()
 	# Accumulate the time passed
 	time_passed += delta
 	
@@ -35,8 +38,13 @@ func _process(delta: float):
 			var cager = get_node(cage)
 			if enemy != null:
 				enemy.changeState()
-			cager.increaseSpeed()
+			if cager != null:
+				cager.increaseSpeed()
 			
 		# Reset the time and choose a new random wait time
 		time_passed = 0.0
 		wait_time = randf_range(1.0, 2.0)
+		
+func _game_over():
+	if bloodpoints == 0:
+		get_tree().change_scene_to_file("res://Szenen/death_screen.tscn")
