@@ -32,8 +32,8 @@ func _on_start_pressed():
 	if Global.current_level == 8:
 		get_tree().change_scene_to_file("res://Szenen/Level/Level08Final.tscn")
 	if Global.current_level == 9:
-		#get_tree().change_scene_to_file()
-		pass
+		get_tree().change_scene_to_file("res://Szenen/credits.tscn")
+		
 	
 	
 	

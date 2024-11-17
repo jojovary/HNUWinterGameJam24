@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy1i3ix0rgdrl"]
+[gd_scene load_steps=3 format=3 uid="uid://cy1i3ix0rgdrl"]
 
 [ext_resource type="Texture2D" uid="uid://cb156rg6le68g" path="res://Sprites/WorkingSprites/Background/Menu_Endscreen_BW.png" id="1_bqnhj"]
+[ext_resource type="FontFile" uid="uid://d0g3kk1x8fhaf" path="res://Sprites/Prototyping Assets/MGS2.ttf" id="2_web8k"]
 
 [node name="Credits" type="Node2D"]
 
@@ -10,3 +11,20 @@
 texture_filter = 1
 texture = ExtResource("1_bqnhj")
 centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 254.0
+offset_top = 147.0
+offset_right = 482.0
+offset_bottom = 339.0
+theme_override_colors/default_color = Color(0.686275, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.909608, 0.908676, 0.944631, 1)
+theme_override_fonts/normal_font = ExtResource("2_web8k")
+theme_override_font_sizes/normal_font_size = 19
+text = "
+Sebastian Andrade
+Jonathan Buss
+Theresa Skirl
+Martin Ambronn
+\"akid\" on Instagramm"
