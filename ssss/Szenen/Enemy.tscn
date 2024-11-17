@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt02wfefm3icm"]
+[gd_scene load_steps=16 format=3 uid="uid://bt02wfefm3icm"]
 
 [ext_resource type="Script" path="res://Scripte/enemyAI.gd" id="1_i85jl"]
 [ext_resource type="Texture2D" uid="uid://bfumfautjm32h" path="res://Sprites/WorkingSprites/Enemy_Zombie_Walk.png" id="3_b5lw7"]
 [ext_resource type="Script" path="res://Scripte/zombie_sprite.gd" id="4_1fpno"]
+[ext_resource type="Texture2D" uid="uid://cbg14bo8q07l7" path="res://Sprites/WorkingSprites/Enemy_Zombie_InAir.png" id="4_nrn46"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_linvy"]
 height = 40.0
@@ -36,6 +37,49 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ayym"]
+atlas = ExtResource("4_nrn46")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mysd0"]
+atlas = ExtResource("4_nrn46")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlvu2"]
+atlas = ExtResource("4_nrn46")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2tmn"]
+atlas = ExtResource("4_nrn46")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thnsk"]
+atlas = ExtResource("4_nrn46")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2va81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ayym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mysd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlvu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2tmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thnsk")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 15.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 12
@@ -56,3 +100,9 @@ scale = Vector2(2.08, 1)
 target_position = Vector2(0, 8)
 collision_mask = 12
 collide_with_areas = true
+
+[node name="FlyingSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_2va81")
+animation = &"fly"
+frame_progress = 0.89305

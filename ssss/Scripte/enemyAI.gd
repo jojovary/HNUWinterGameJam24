@@ -8,6 +8,7 @@ var launched = false
 
 func _ready():
 	Global.enemies.append(self.get_path())
+	$FlyingSprite.play("fly")
 
 
 func _physics_process(delta):
@@ -27,7 +28,7 @@ func _physics_process(delta):
 
 func changeState():
 	currentState = state.JUMP
-	launched = 0
+	launched = false
 	$".".set_collision_mask_value(3,false)
 	Global.enemies.erase(self.get_path())
 
@@ -49,6 +50,11 @@ func miseryInCage(delta):
 	velocity.x = speed
 
 func launch(delta):
+	
+	if launched == false:
+			velocity.y = randf_range(-400,-700 )
+			velocity.x = randf_range(-100,-200)
+			launched = true
 	 # while the player is jumping gravity should affect him
 	if not is_on_floor():
 		velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
@@ -56,18 +62,13 @@ func launch(delta):
 	directionFlip()
 		#enables the player to jump while he is not in the air and pressing the according button
 	if is_on_floor():
-		
-		if launched == false:
-			velocity.y = randf_range(-400,-700 )
-			velocity.x = randf_range(-100,-200)
-			launched = true
-		else:
-			currentState = state.FLEETING
-		
+		currentState = state.FLEETING
 
 func back_to_hell():
 	currentState = state.BACKTOHELL
-	launched = 0
+	launched = false
+	$ZombieSprite.visible = false
+	$FlyingSprite.visible = true
 	$".".set_collision_mask_value(3,true)
 	Global.enemies.append(self.get_path())
 
@@ -75,19 +76,20 @@ func back_to_hell():
 
 func highway_to_hell(delta):
 	 # while the player is jumping gravity should affect him
+	if launched == false:
+			velocity.y = -600
+			velocity.x = Global.cage_speed + 150
+			launched = true
+	
 	if not is_on_floor():
 		velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
 	
 	directionFlip()
 		#enables the player to jump while he is not in the air and pressing the according button
 	if is_on_floor():
-		
-		if launched == false:
-			velocity.y = -600
-			velocity.x = Global.cage_speed + 150
-			launched = true
-		else:
-			currentState = state.CAGE
+		currentState = state.CAGE
+		$ZombieSprite.visible = true
+		$FlyingSprite.visible = false
 		
 
 
