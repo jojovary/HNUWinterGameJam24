@@ -14,6 +14,7 @@ func _process(delta):
 
 func _on_start_pressed():
 	Global.current_level = Global.current_level +1
+	Global.bloodpoints = 230
 	if Global.current_level == 1:
 		get_tree().change_scene_to_file("res://Szenen/Level/Level01Final.tscn")
 	if Global.current_level == 2:
