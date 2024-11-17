@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dt2nuj67k2ely"]
+[gd_scene load_steps=17 format=3 uid="uid://dt2nuj67k2ely"]
 
 [ext_resource type="Script" path="res://Scripte/main_menu.gd" id="1_3og4u"]
 [ext_resource type="Texture2D" uid="uid://bftc8ol0vhupm" path="res://Sprites/WorkingSprites/Menu/Menu_BG5.png" id="2_26w47"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dlgu4he381gnv" path="res://Sprites/WorkingSprites/Menu/ExitGrey.png" id="10_iweqm"]
 [ext_resource type="Texture2D" uid="uid://cov2s4hwvjl38" path="res://Sprites/WorkingSprites/Menu/Exit.png" id="11_30dts"]
 [ext_resource type="Texture2D" uid="uid://cktjcn348unbt" path="res://Sprites/WorkingSprites/Menu/Menu_Logo.png" id="12_mwvsv"]
+[ext_resource type="AudioStream" uid="uid://c73crt6ium2er" path="res://Audio/TitleScreenMusic.mp3" id="13_32a3k"]
 
 [sub_resource type="Animation" id="Animation_rhgsj"]
 length = 0.001
@@ -210,6 +211,11 @@ position = Vector2(310, 117)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("12_mwvsv")
 hframes = 6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_32a3k")
+volume_db = -3.748
+autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_button_quit_pressed"]

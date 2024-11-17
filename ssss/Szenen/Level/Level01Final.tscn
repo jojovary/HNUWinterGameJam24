@@ -31,7 +31,7 @@ position = Vector2(528, 88)
 position = Vector2(584, 40)
 
 [node name="Enemy13" parent="Enemies" instance=ExtResource("6_lrhm7")]
-position = Vector2(648, 16)
+position = Vector2(619, 46)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("6_lrhm7")]
 position = Vector2(512, 160)
@@ -76,10 +76,10 @@ position = Vector2(528, 208)
 position = Vector2(512, 272)
 
 [node name="Enemy22" parent="Enemies" instance=ExtResource("6_lrhm7")]
-position = Vector2(632, 224)
+position = Vector2(610, 248)
 
 [node name="Enemy23" parent="Enemies" instance=ExtResource("6_lrhm7")]
-position = Vector2(656, 104)
+position = Vector2(612, 112)
 
 [node name="Enemy9" parent="Enemies" instance=ExtResource("6_lrhm7")]
 position = Vector2(568, 216)
