@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4k02tgtp24bk"]
+[gd_scene load_steps=9 format=3 uid="uid://b4k02tgtp24bk"]
 
 [ext_resource type="PackedScene" uid="uid://47t4f3dy208j" path="res://Szenen/parallax_background_prototyp.tscn" id="1_mpeyj"]
 [ext_resource type="PackedScene" uid="uid://b6x6gavggkw0d" path="res://Szenen/Level/Level_01.tscn" id="5_6fwkq"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="6_lrhm7"]
 [ext_resource type="PackedScene" uid="uid://dtw5hda1rjuby" path="res://Szenen/Cage.tscn" id="7_kokx2"]
+[ext_resource type="PackedScene" uid="uid://cblb6uq3ounsj" path="res://Szenen/cage_sprite.tscn" id="7_pm05y"]
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="8_2ldgt"]
+[ext_resource type="PackedScene" uid="uid://b1mdij4yv6lk" path="res://Szenen/bush.tscn" id="8_svmhr"]
 [ext_resource type="PackedScene" uid="uid://ts6a0d2kqdka" path="res://Szenen/DoorToHell.tscn" id="9_bsdm4"]
 
 [node name="Level01Final" type="Node2D"]
@@ -92,3 +94,27 @@ position = Vector2(373, 332)
 
 [node name="DoorToHell" parent="." instance=ExtResource("9_bsdm4")]
 position = Vector2(6104, 281)
+
+[node name="CageSprite" parent="." instance=ExtResource("7_pm05y")]
+position = Vector2(849, 43)
+
+[node name="CageSprite3" parent="." instance=ExtResource("7_pm05y")]
+position = Vector2(2527, 40)
+
+[node name="CageSprite2" parent="." instance=ExtResource("7_pm05y")]
+position = Vector2(3968, 41)
+
+[node name="CageSprite4" parent="." instance=ExtResource("7_pm05y")]
+position = Vector2(5282, 36)
+
+[node name="bush" parent="." instance=ExtResource("8_svmhr")]
+position = Vector2(218, 352)
+
+[node name="bush2" parent="." instance=ExtResource("8_svmhr")]
+position = Vector2(275, 352)
+
+[node name="bush3" parent="." instance=ExtResource("8_svmhr")]
+position = Vector2(1348, 352)
+
+[node name="bush4" parent="." instance=ExtResource("8_svmhr")]
+position = Vector2(1995, 352)

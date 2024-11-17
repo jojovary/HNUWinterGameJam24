@@ -96,3 +96,5 @@ position = Vector2(-500, -343)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BloodPointsCheck"]
 position = Vector2(-510, -183)
 shape = SubResource("RectangleShape2D_gv5cv")
+
+[connection signal="body_entered" from="BloodPointsCheck" to="." method="_on_blood_points_check_body_entered"]

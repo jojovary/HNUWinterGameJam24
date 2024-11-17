@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=3 uid="uid://cblb6uq3ounsj"]
+
+[ext_resource type="Texture2D" uid="uid://4ryurjiij402" path="res://Sprites/WorkingSprites/Enviroment/Cage_Hang_Anim.png" id="1_kol8j"]
+[ext_resource type="Script" path="res://Scripte/cage_sprite.gd" id="2_8m8ct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5a3a"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_835dg"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4daw"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plv8g"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tox0e"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0byi"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(320, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uog1e"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(384, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae7f4"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(448, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v35kb"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(512, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63dbd"]
+atlas = ExtResource("1_kol8j")
+region = Rect2(576, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h53c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5a3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_835dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4daw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plv8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tox0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0byi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uog1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae7f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v35kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63dbd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="CageSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5h53c")
+frame_progress = 0.447912
+script = ExtResource("2_8m8ct")

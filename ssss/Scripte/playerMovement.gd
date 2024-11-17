@@ -114,3 +114,15 @@ func _on_player_animation_attack_whip_animation_finished(Whip):
 
 func _on_player_animation_attack_slash_animation_finished(Slash):
 	slash_attack_anim = false
+	
+##damage when left screen
+func _on_on_screen_check_screen_exited():
+	$Timer.start()
+
+
+func _on_on_screen_check_screen_entered():
+	$Timer.stop()
+
+
+func _on_timer_timeout():
+	Global.bloodpoints = Global.bloodpoints - 5

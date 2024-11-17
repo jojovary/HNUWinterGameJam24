@@ -715,6 +715,11 @@ stream = ExtResource("12_6s816")
 volume_db = -1.038
 autoplay = true
 
+[node name="OnScreenCheck" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="animation_finished" from="PlayerSpriteAttack" to="." method="_on_player_sprite_attack_animation_finished"]
 [connection signal="frame_changed" from="PlayerSpriteAttack" to="." method="_on_player_sprite_attack_frame_changed"]
 [connection signal="body_entered" from="SlashHitbox" to="SlashHitbox" method="_on_body_entered"]
@@ -722,3 +727,6 @@ autoplay = true
 [connection signal="animation_finished" from="PlayerAnimationAttackWhip" to="." method="_on_player_animation_attack_whip_animation_finished"]
 [connection signal="animation_finished" from="PlayerAnimationAttackSlash" to="." method="_on_player_animation_attack_slash_animation_finished"]
 [connection signal="current_animation_changed" from="PlayerAnimationAttackSlash" to="." method="_on_player_animation_attack_slash_current_animation_changed"]
+[connection signal="screen_entered" from="OnScreenCheck" to="." method="_on_on_screen_check_screen_entered"]
+[connection signal="screen_exited" from="OnScreenCheck" to="." method="_on_on_screen_check_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
