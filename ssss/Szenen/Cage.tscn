@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://dtw5hda1rjuby"]
+[gd_scene load_steps=12 format=4 uid="uid://dtw5hda1rjuby"]
 
 [ext_resource type="Script" path="res://Scripte/cage.gd" id="1_7021u"]
 [ext_resource type="Texture2D" uid="uid://bc4vbrd531s51" path="res://Sprites/WorkingSprites/Cage_Left.png" id="2_3qab1"]
 [ext_resource type="Texture2D" uid="uid://buwdudl1cfpbl" path="res://Sprites/WorkingSprites/Cage_Mid.png" id="3_fvwf4"]
 [ext_resource type="Texture2D" uid="uid://bsgw0wtb6xqn4" path="res://Sprites/WorkingSprites/Cage_Right.png" id="4_loawl"]
 [ext_resource type="PackedScene" uid="uid://brcd56u4l5i2s" path="res://Szenen/Gnome.tscn" id="5_wo1iv"]
+[ext_resource type="PackedScene" uid="uid://hp0o5ekw26mh" path="res://Szenen/BloodPointsUI.tscn" id="6_8oxjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13nl8"]
 size = Vector2(153, 7)
@@ -78,3 +79,6 @@ position = Vector2(-180, -151)
 position = Vector2(0, -4)
 tile_map_data = PackedByteArray("AAD7//3/AAAAAAAAAAD7//7/AAAAAAEAAAD7////AAAAAAIAAAD7/wAAAAAAAAMAAAAEAP3/AgAAAAAAAAAEAP7/AgAAAAEAAAAEAAAAAgAAAAMAAAAEAP//AgAAAAIAAAD8//3/AQAAAAAAAAD8//7/AQAAAAEAAAD8////AQAAAAIAAAD8/wAAAQAAAAMAAAD9//3/AQABAAAAAAD9//7/AQABAAEAAAD9////AQABAAIAAAD9/wAAAQABAAMAAAD+//3/AQAAAAAAAAD+//7/AQAAAAEAAAD+////AQAAAAIAAAD+/wAAAQAAAAMAAAD///3/AQABAAAAAAD///7/AQABAAEAAAD/////AQABAAIAAAD//wAAAQABAAMAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAEAAAAAAP//AQAAAAIAAAAAAAAAAQAAAAMAAAABAP3/AQABAAAAAAABAP7/AQABAAEAAAABAP//AQABAAIAAAABAAAAAQABAAMAAAACAP3/AQAAAAAAAAACAP7/AQAAAAEAAAACAP//AQAAAAIAAAACAAAAAQAAAAMAAAADAP3/AQABAAAAAAADAP7/AQABAAEAAAADAP//AQABAAIAAAADAAAAAQABAAMAAAA=")
 tile_set = SubResource("TileSet_p7lt8")
+
+[node name="BloodTimerUI" parent="." instance=ExtResource("6_8oxjf")]
+position = Vector2(-500, -343)

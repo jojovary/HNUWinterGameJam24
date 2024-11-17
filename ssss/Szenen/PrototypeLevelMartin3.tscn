@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3ymgdrfrvy3s"]
+
+[ext_resource type="Texture2D" uid="uid://hkhn5rr645im" path="res://Sprites/WorkingSprites/Background/bg.png" id="1_14eh1"]
+[ext_resource type="Texture2D" uid="uid://ca2nlh2xrpr08" path="res://Sprites/WorkingSprites/Background/collums.png" id="2_d3win"]
+[ext_resource type="Texture2D" uid="uid://djrute2p73rle" path="res://Sprites/WorkingSprites/Background/spikes.png" id="3_jfega"]
+[ext_resource type="AudioStream" uid="uid://bgpsmgyjopd2t" path="res://Audio/HNU Gamejam S_Team Demo 1.mp3" id="4_uxbt8"]
+[ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level1.tscn" id="5_gmt8c"]
+[ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="6_6v0hg"]
+[ext_resource type="PackedScene" uid="uid://dtw5hda1rjuby" path="res://Szenen/Cage.tscn" id="7_8sibv"]
+[ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="8_muekc"]
+[ext_resource type="PackedScene" uid="uid://ts6a0d2kqdka" path="res://Szenen/DoorToHell.tscn" id="9_30mc7"]
+
+[node name="PrototypeLevel2" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Bg" type="Sprite2D" parent="Background"]
+position = Vector2(640, 192)
+texture = ExtResource("1_14eh1")
+
+[node name="Collums" type="Sprite2D" parent="Background"]
+position = Vector2(640, 192)
+texture = ExtResource("2_d3win")
+
+[node name="Spikes" type="Sprite2D" parent="Background"]
+position = Vector2(640, 192)
+texture = ExtResource("3_jfega")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uxbt8")
+autoplay = true
+
+[node name="Level1" parent="." instance=ExtResource("5_gmt8c")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(536, 312)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(600, 192)
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(584, 120)
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(528, 88)
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(584, 40)
+
+[node name="Enemy13" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(648, 16)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(512, 160)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(536, 248)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(616, 80)
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(544, 168)
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(616, 136)
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(552, 56)
+
+[node name="Enemy14" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(552, 112)
+
+[node name="Enemy15" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(576, 160)
+
+[node name="Enemy16" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(584, 88)
+
+[node name="Enemy17" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(616, 32)
+
+[node name="Enemy18" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(592, 232)
+
+[node name="Enemy19" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(584, 272)
+
+[node name="Enemy20" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(528, 208)
+
+[node name="Enemy21" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(512, 272)
+
+[node name="Enemy22" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(632, 224)
+
+[node name="Enemy23" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(656, 104)
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource("6_6v0hg")]
+position = Vector2(568, 216)
+
+[node name="Cage" parent="." instance=ExtResource("7_8sibv")]
+position = Vector2(552, 344)
+
+[node name="Player" parent="." instance=ExtResource("8_muekc")]
+position = Vector2(384, 328)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="DoorToHell" parent="." instance=ExtResource("9_30mc7")]
+position = Vector2(824, 280)
