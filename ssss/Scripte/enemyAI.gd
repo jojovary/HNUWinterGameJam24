@@ -10,6 +10,8 @@ signal BloodpointsLost
 signal BloodpointsGained
 
 var bomba = preload("res://Szenen/HitEffect.tscn")
+@onready var player_sound_manager = $EnemySoundManager
+
 
 func _ready():
 	Global.enemies.append(self.get_path())
@@ -70,6 +72,8 @@ func launch(delta):
 func back_to_hell():
 	velocity.y = -600
 	velocity.x = Global.cage_speed + 150
+	change_audio_to()
+	change_audio_to("SchreiA")
 	$ZombieSprite.visible = false
 	$FlyingSprite.visible = true
 	$".".set_collision_mask_value(3,true)
@@ -113,3 +117,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	emit_signal("BloodpointsLost")
 	Global.bloodpoints = Global.bloodpoints - 10
 	queue_free()
+
+func change_audio_to(audio_name: String = ""):
+	if audio_name == "":
+		player_sound_manager.stop()
+	if (audio_name != player_sound_manager["parameters/switch_to_clip"]):
+		player_sound_manager.play()
+		player_sound_manager["parameters/switch_to_clip"] = audio_name

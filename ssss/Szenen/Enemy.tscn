@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bt02wfefm3icm"]
+[gd_scene load_steps=19 format=3 uid="uid://bt02wfefm3icm"]
 
 [ext_resource type="Script" path="res://Scripte/enemyAI.gd" id="1_i85jl"]
 [ext_resource type="Texture2D" uid="uid://bfumfautjm32h" path="res://Sprites/WorkingSprites/Enemy_Zombie_Walk.png" id="3_b5lw7"]
 [ext_resource type="Script" path="res://Scripte/zombie_sprite.gd" id="4_1fpno"]
 [ext_resource type="Texture2D" uid="uid://cbg14bo8q07l7" path="res://Sprites/WorkingSprites/Enemy_Zombie_InAir.png" id="4_nrn46"]
+[ext_resource type="AudioStream" uid="uid://d0y70tud5rgpn" path="res://Audio/Qualvoller Schrei neu.wav" id="5_ve6wv"]
+[ext_resource type="AudioStream" uid="uid://newvs18ffofe" path="res://Audio/Qualvoller Schrei ohne FX neu.wav" id="6_oqdem"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_linvy"]
 height = 40.0
@@ -80,6 +82,15 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_hyced"]
+clip_count = 2
+clip_0/name = &"SchreiA"
+clip_0/stream = ExtResource("5_ve6wv")
+clip_0/auto_advance = 0
+clip_1/name = &"SchreiB"
+clip_1/stream = ExtResource("6_oqdem")
+clip_1/auto_advance = 0
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 28
@@ -110,5 +121,8 @@ frame_progress = 0.89305
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(0.6, 1)
+
+[node name="EnemySoundManager" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamInteractive_hyced")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
