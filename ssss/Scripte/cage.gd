@@ -10,6 +10,7 @@ func _ready() -> void:
 	Global.cage_speed
 
 func _physics_process(delta: float) -> void:
+	
 	if position.x < 6120:
 		$".".position +=  direction * delta
 	else:
