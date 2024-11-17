@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0mgxlhbswkr5"]
+
+[ext_resource type="Script" path="res://Scripte/endlevel_screen.gd" id="1_7f38a"]
+
+[node name="EndlevelScreen" type="Node2D"]
+script = ExtResource("1_7f38a")
+
+[node name="HighscoreLabel" type="Label" parent="."]
+offset_left = 306.0
+offset_top = 181.0
+offset_right = 346.0
+offset_bottom = 204.0

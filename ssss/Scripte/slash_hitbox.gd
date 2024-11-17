@@ -16,7 +16,7 @@ func _on_body_entered(body):
 		Global.enemies.erase(body.get_path())		##funktioniert, solange man den Cage nicht angreift
 		Global.enemies.resize(Global.enemies.size() - 1)
 		#print(Global.enemies)
-		
+		Global.bloodpoints = Global.bloodpoints - 5
 		body.queue_free()		##funktioniert nicht wegen Change State
 		print("SLASH!" + str(body))
 		
