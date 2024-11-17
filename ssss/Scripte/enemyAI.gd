@@ -41,6 +41,7 @@ func changeState():
 	currentState = state.JUMP
 	$".".set_collision_mask_value(3,false)
 	Global.enemies.erase(self.get_path())
+	clean_up_enemies()
 
 func flee(delta):
 	if not is_on_floor():
@@ -144,3 +145,10 @@ func getReckt():
 
 func die_final() -> void:
 	queue_free()
+
+# Function to remove `null` entries or enemies that meet a specific condition
+func clean_up_enemies():
+	# Iterate backwards through the array to avoid shifting issues
+	for i in range(Global.enemies.size() - 1, -1, -1):
+		if Global.enemies[i] == null:
+			Global.enemies.remove_at(i)
