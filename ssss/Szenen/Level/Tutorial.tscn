@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv3i5j5d8n8rw"]
+[gd_scene load_steps=12 format=3 uid="uid://bv3i5j5d8n8rw"]
 
+[ext_resource type="Script" path="res://Scripte/tutorialLevelCheck.gd" id="1_n2t3o"]
 [ext_resource type="PackedScene" uid="uid://47t4f3dy208j" path="res://Szenen/parallax_background_prototyp.tscn" id="1_u2mew"]
 [ext_resource type="Texture2D" uid="uid://hkhn5rr645im" path="res://Sprites/WorkingSprites/Background/bg.png" id="1_xaj3d"]
 [ext_resource type="Texture2D" uid="uid://ca2nlh2xrpr08" path="res://Sprites/WorkingSprites/Background/collums.png" id="2_pvtii"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ts6a0d2kqdka" path="res://Szenen/DoorToHell.tscn" id="9_ur7r3"]
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_n2t3o")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_u2mew")]
 
