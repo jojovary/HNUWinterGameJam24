@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("WHACK!" + str(body))
+	print("SLASH!" + str(body))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://itmuu337vbj5"]
+[gd_scene load_steps=35 format=3 uid="uid://itmuu337vbj5"]
 
 [ext_resource type="Script" path="res://Scripte/playerMovement.gd" id="1_55dw6"]
 [ext_resource type="Texture2D" uid="uid://bv0cru5mwbiom" path="res://Sprites/WorkingSprites/HeroConcept.png" id="2_64wki"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmjqsnkxupsle" path="res://Sprites/WorkingSprites/KrakenPussy_Whip.png" id="5_v0ge4"]
 [ext_resource type="Texture2D" uid="uid://cicpqvfm0h8c5" path="res://Sprites/WorkingSprites/KrakenPussy_Slash.png" id="6_gnklw"]
 [ext_resource type="Script" path="res://Scripte/whip_hitbox.gd" id="7_67ysn"]
+[ext_resource type="Script" path="res://Scripte/slash_hitbox.gd" id="7_ofvqf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8t0n"]
 atlas = ExtResource("3_sny7w")
@@ -363,118 +364,6 @@ tracks/15/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_r3tp3"]
-resource_name = "Whip"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WhipSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WhipHitbox/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667, 0.2, 0.266667, 0.3, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, false, false, false, false, false, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WhipHitbox/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.2, 0.266667, 0.3),
-"transitions": PackedFloat32Array(9.18958, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(56, -14), Vector2(0, 12), Vector2(0, 12), Vector2(4, -25), Vector2(4, -25), Vector2(4, -25)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("WhipHitbox/CollisionShape2D:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.2, 0.266667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [1.43684, 1.61959, 1.61959, 1.47085, 1.47085, 1.47085]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("WhipHitbox/CollisionShape2D:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.2, 0.266667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("WhipHitbox/CollisionShape2D:skew")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.2, 0.266667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("WhipHitbox:disable_mode")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("WhipHitbox:monitoring")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.3, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("WhipHitbox:monitorable")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.3, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-
 [sub_resource type="Animation" id="Animation_und7k"]
 resource_name = "Slash"
 length = 0.5
@@ -587,6 +476,118 @@ tracks/8/keys = {
 "values": [false, true, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_r3tp3"]
+resource_name = "Whip"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WhipSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WhipHitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667, 0.2, 0.266667, 0.3, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, false, false, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WhipHitbox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.2, 0.266667, 0.3),
+"transitions": PackedFloat32Array(9.18958, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(56, -14), Vector2(0, 12), Vector2(0, 12), Vector2(4, -25), Vector2(4, -25), Vector2(4, -25)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WhipHitbox/CollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.2, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.43684, 1.61959, 1.61959, 1.47085, 1.47085, 1.47085]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WhipHitbox/CollisionShape2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.2, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WhipHitbox/CollisionShape2D:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.2, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WhipHitbox:disable_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WhipHitbox:monitoring")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.3, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WhipHitbox:monitorable")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.3, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xakfu"]
 _data = {
 "RESET": SubResource("Animation_yq0ie"),
@@ -623,6 +624,7 @@ collision_layer = 0
 collision_mask = 2
 monitoring = false
 monitorable = false
+script = ExtResource("7_ofvqf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlashHitbox"]
 position = Vector2(30, -7)
@@ -667,8 +669,8 @@ frame = 4
 
 [connection signal="animation_finished" from="PlayerSpriteAttack" to="." method="_on_player_sprite_attack_animation_finished"]
 [connection signal="frame_changed" from="PlayerSpriteAttack" to="." method="_on_player_sprite_attack_frame_changed"]
+[connection signal="body_entered" from="SlashHitbox" to="SlashHitbox" method="_on_body_entered"]
 [connection signal="body_entered" from="WhipHitbox" to="WhipHitbox" method="_on_body_entered"]
-[connection signal="body_shape_entered" from="WhipHitbox" to="WhipHitbox" method="_on_body_shape_entered"]
 [connection signal="animation_finished" from="PlayerAnimationAttackWhip" to="." method="_on_player_animation_attack_whip_animation_finished"]
 [connection signal="animation_finished" from="PlayerAnimationAttackSlash" to="." method="_on_player_animation_attack_slash_animation_finished"]
 [connection signal="current_animation_changed" from="PlayerAnimationAttackSlash" to="." method="_on_player_animation_attack_slash_current_animation_changed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceebc4l465n4c"]
+[gd_scene load_steps=8 format=3 uid="uid://ceebc4l465n4c"]
 
 [ext_resource type="PackedScene" uid="uid://itmuu337vbj5" path="res://Szenen/player.tscn" id="1_ya4xl"]
+[ext_resource type="PackedScene" uid="uid://47t4f3dy208j" path="res://Szenen/parallax_background_prototyp.tscn" id="2_ncf74"]
 [ext_resource type="PackedScene" uid="uid://bt02wfefm3icm" path="res://Szenen/Enemy.tscn" id="3_h8dj6"]
 [ext_resource type="PackedScene" uid="uid://di1i70tw7skre" path="res://Szenen/Level1.tscn" id="5_do6im"]
 [ext_resource type="PackedScene" uid="uid://ts6a0d2kqdka" path="res://Szenen/DoorToHell.tscn" id="6_k2s3d"]
@@ -12,6 +13,8 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_4ih6d")
 autoplay = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_ncf74")]
 
 [node name="Level1" parent="." instance=ExtResource("5_do6im")]
 
