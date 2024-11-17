@@ -31,7 +31,6 @@ stream = ExtResource("10_4ih6d")
 autoplay = true
 
 [node name="Level1" parent="." instance=ExtResource("5_u1mie")]
-position = Vector2(64, 32)
 
 [node name="Enemies" type="Node2D" parent="."]
 
