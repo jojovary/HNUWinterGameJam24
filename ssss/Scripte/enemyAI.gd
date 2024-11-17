@@ -6,7 +6,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 enum state {CAGE,FLEETING,ANGRY, ATTACKING, JUMP, BACKTOHELL}
 var currentState = state.CAGE
 var launched = 0
-
+signal BloodpointsLost
+signal BloodpointsGained
 func _ready():
 	Global.enemies.append(self.get_path())
 	$FlyingSprite.play()
@@ -100,3 +101,12 @@ func directionFlip():
 		$ZombieSprite.flip_h = true
 	elif velocity.x > 0:
 		$ZombieSprite.flip_h = false
+		
+
+
+##counts points for BloodPointsUI
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	emit_signal("BloodpointsLost")
+	Global.bloodpoints = Global.bloodpoints - 10
+	print(Global.bloodpoints)
+	queue_free()
