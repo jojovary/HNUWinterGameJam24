@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dtw5hda1rjuby"]
+[gd_scene load_steps=15 format=4 uid="uid://dtw5hda1rjuby"]
 
 [ext_resource type="Script" path="res://Scripte/cage.gd" id="1_7021u"]
 [ext_resource type="Texture2D" uid="uid://bc4vbrd531s51" path="res://Sprites/WorkingSprites/Cage_Left.png" id="2_3qab1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bsgw0wtb6xqn4" path="res://Sprites/WorkingSprites/Cage_Right.png" id="4_loawl"]
 [ext_resource type="PackedScene" uid="uid://brcd56u4l5i2s" path="res://Szenen/Gnome.tscn" id="5_wo1iv"]
 [ext_resource type="PackedScene" uid="uid://hp0o5ekw26mh" path="res://Szenen/BloodPointsUI.tscn" id="6_8oxjf"]
+[ext_resource type="PackedScene" uid="uid://cql4wlvpa7oy8" path="res://Szenen/death_zone.tscn" id="7_t5qli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13nl8"]
 size = Vector2(144, 4)
@@ -42,6 +43,9 @@ sources/2 = SubResource("TileSetAtlasSource_df1jf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5cv"]
 size = Vector2(20, 492)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3iqc"]
+size = Vector2(11, 57)
 
 [node name="Cage" type="AnimatableBody2D"]
 collision_layer = 4
@@ -87,8 +91,17 @@ tile_set = SubResource("TileSet_p7lt8")
 [node name="BloodTimerUI" parent="." instance=ExtResource("6_8oxjf")]
 position = Vector2(-500, -343)
 
+[node name="DeathZone" parent="." instance=ExtResource("7_t5qli")]
+position = Vector2(-500, -343)
+
 [node name="BloodPointsCheck" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BloodPointsCheck"]
 position = Vector2(-510, -183)
 shape = SubResource("RectangleShape2D_gv5cv")
+
+[node name="EndgameCheck" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndgameCheck"]
+position = Vector2(-83, -26)
+shape = SubResource("RectangleShape2D_h3iqc")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt2nuj67k2ely"]
+[gd_scene load_steps=16 format=3 uid="uid://dt2nuj67k2ely"]
 
 [ext_resource type="Script" path="res://Scripte/main_menu.gd" id="1_3og4u"]
 [ext_resource type="Texture2D" uid="uid://bftc8ol0vhupm" path="res://Sprites/WorkingSprites/Menu/Menu_BG5.png" id="2_26w47"]
@@ -11,6 +11,117 @@
 [ext_resource type="Texture2D" uid="uid://bpub174qi0ow0" path="res://Sprites/WorkingSprites/Menu/Start.png" id="9_6hfm2"]
 [ext_resource type="Texture2D" uid="uid://dlgu4he381gnv" path="res://Sprites/WorkingSprites/Menu/ExitGrey.png" id="10_iweqm"]
 [ext_resource type="Texture2D" uid="uid://cov2s4hwvjl38" path="res://Sprites/WorkingSprites/Menu/Exit.png" id="11_30dts"]
+[ext_resource type="Texture2D" uid="uid://cktjcn348unbt" path="res://Sprites/WorkingSprites/Menu/Menu_Logo.png" id="12_mwvsv"]
+
+[sub_resource type="Animation" id="Animation_es6hq"]
+resource_name = "TitleAnimation"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.833333, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667, 1.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(310, 117), Vector2(296, 119), Vector2(314, 117), Vector2(347, 116)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667, 1.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0683533, 0.00855108, 0.16054]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667, 1.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(0.7, 0.7), Vector2(0.7, 0.7), Vector2(0.7, 0.7)]
+}
+
+[sub_resource type="Animation" id="Animation_rhgsj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(310, 117)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7dr0"]
+_data = {
+"RESET": SubResource("Animation_rhgsj"),
+"TitleAnimation": SubResource("Animation_es6hq")
+}
 
 [node name="StartMenuSzene" type="Node2D"]
 script = ExtResource("1_3og4u")
@@ -68,9 +179,9 @@ script = ExtResource("7_ehb3m")
 
 [node name="Start" type="TextureButton" parent="."]
 offset_left = 240.0
-offset_top = 128.0
+offset_top = 206.0
 offset_right = 400.0
-offset_bottom = 192.0
+offset_bottom = 270.0
 texture_normal = ExtResource("8_x5t3f")
 texture_pressed = ExtResource("9_6hfm2")
 texture_hover = ExtResource("9_6hfm2")
@@ -79,14 +190,26 @@ texture_focused = ExtResource("9_6hfm2")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 240.0
-offset_top = 200.0
+offset_top = 278.0
 offset_right = 400.0
-offset_bottom = 263.0
+offset_bottom = 341.0
 texture_normal = ExtResource("10_iweqm")
 texture_pressed = ExtResource("11_30dts")
 texture_hover = ExtResource("11_30dts")
 texture_disabled = ExtResource("10_iweqm")
 texture_focused = ExtResource("11_30dts")
+
+[node name="TitelAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l7dr0")
+}
+autoplay = "TitleAnimation"
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(310, 117)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_mwvsv")
+hframes = 6
 
 [connection signal="pressed" from="Start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_button_quit_pressed"]

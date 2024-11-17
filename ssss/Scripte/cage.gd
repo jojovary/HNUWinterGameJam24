@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	if position.x < 6120:
 		$".".position +=  direction * delta
 	else:
-		pass
+		get_tree().change_scene_to_file("res://Szenen/endlevel_screen.tscn")
 
 func increaseSpeed():
 	direction.x += peopleWeight
