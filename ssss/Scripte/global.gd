@@ -6,7 +6,7 @@ var wait_time: float = 0.0
 var enemies = []
 var cage 
 var gamefinished = 0
-
+var cage_speed = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

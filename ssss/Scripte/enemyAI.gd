@@ -2,9 +2,9 @@ extends CharacterBody2D
 var ground = true
 var speed = 50.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-enum state {CAGE,FLEETING,ANGRY, ATTACKING, JUMP}
+enum state {CAGE,FLEETING,ANGRY, ATTACKING, JUMP, BACKTOHELL}
 var currentState = state.CAGE
-var launched = 0
+var launched = false
 
 func _ready():
 	Global.enemies.append(self.get_path())
@@ -15,17 +15,19 @@ func _physics_process(delta):
 	
 	if currentState == state.CAGE:
 		miseryInCage(delta)
-	
-	if currentState == state.FLEETING:
+	elif currentState == state.FLEETING:
 		flee(delta)
-	
-	if currentState == state.JUMP:
+	elif currentState == state.JUMP:
 		launch(delta)
+	elif currentState == state.BACKTOHELL:
+		highway_to_hell(delta)
+	
 	
 	move_and_slide()
 
 func changeState():
 	currentState = state.JUMP
+	launched = 0
 	$".".set_collision_mask_value(3,false)
 	Global.enemies.erase(self.get_path())
 
@@ -40,10 +42,6 @@ func flee(delta):
 func miseryInCage(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	#if $GroundDetectorLeft.is_colliding():
-		#speed = speed * -1
-		#print("test")
-		
 	if !$GroundDetectorRight.is_colliding():
 		speed = speed * -1
 		scale.x = abs(scale.x) * -1
@@ -59,13 +57,39 @@ func launch(delta):
 		#enables the player to jump while he is not in the air and pressing the according button
 	if is_on_floor():
 		
-		if launched < 1:
+		if launched == false:
 			velocity.y = randf_range(-400,-700 )
 			velocity.x = randf_range(-100,-200)
-			launched += 1
+			launched = true
 		else:
 			currentState = state.FLEETING
 		
+
+func back_to_hell():
+	currentState = state.BACKTOHELL
+	launched = 0
+	$".".set_collision_mask_value(3,true)
+	Global.enemies.append(self.get_path())
+
+
+
+func highway_to_hell(delta):
+	 # while the player is jumping gravity should affect him
+	if not is_on_floor():
+		velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
+	
+	directionFlip()
+		#enables the player to jump while he is not in the air and pressing the according button
+	if is_on_floor():
+		
+		if launched == false:
+			velocity.y = -600
+			velocity.x = Global.cage_speed + 150
+			launched = true
+		else:
+			currentState = state.CAGE
+		
+
 
 
 func directionFlip():
