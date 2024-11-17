@@ -8,6 +8,9 @@ var currentState = state.CAGE
 var launched = 0
 signal BloodpointsLost
 signal BloodpointsGained
+
+var bomba = preload("res://Szenen/HitEffect.tscn")
+
 func _ready():
 	Global.enemies.append(self.get_path())
 	$FlyingSprite.play()
@@ -72,6 +75,9 @@ func back_to_hell():
 	$ZombieSprite.visible = false
 	$FlyingSprite.visible = true
 	$".".set_collision_mask_value(3,true)
+	var hitEffect = bomba.instantiate() 
+	self.add_child(hitEffect)
+	hitEffect.global_position = self.global_position
 	currentState = state.BACKTOHELL
 
 func highway_to_hell(delta):
