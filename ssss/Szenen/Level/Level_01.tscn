@@ -77,9 +77,7 @@ texture = ExtResource("1_emyxl")
 3:6/0 = 0
 3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:6/0 = 0
-4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:6/0 = 0
-5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:7/0 = 0
 0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:7/0 = 0
@@ -89,9 +87,7 @@ texture = ExtResource("1_emyxl")
 3:7/0 = 0
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:7/0 = 0
-4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:7/0 = 0
-5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:8/0 = 0
 0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:8/0 = 0
@@ -105,7 +101,7 @@ texture = ExtResource("1_emyxl")
 
 [sub_resource type="TileSet" id="TileSet_g8g3k"]
 physics_layer_0/collision_layer = 8
-physics_layer_0/collision_mask = 15
+physics_layer_0/collision_mask = 47
 sources/0 = SubResource("TileSetAtlasSource_s1c8s")
 
 [node name="Level1" type="TileMapLayer"]
@@ -115,6 +111,42 @@ tile_set = SubResource("TileSet_g8g3k")
 
 [node name="bush2" parent="." instance=ExtResource("2_kpmxi")]
 position = Vector2(737, 321)
+
+[node name="bush8" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(202, 321)
+
+[node name="bush9" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(1109, 321)
+
+[node name="bush10" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(1318, 321)
+
+[node name="bush11" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(1988, 321)
+
+[node name="bush12" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(2086, 321)
+
+[node name="bush13" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(2823, 321)
+
+[node name="bush14" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(3685, 321)
+
+[node name="bush15" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(3766, 321)
+
+[node name="bush16" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(4537, 321)
+
+[node name="bush17" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(5175, 321)
+
+[node name="bush18" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(5689, 321)
+
+[node name="bush19" parent="." instance=ExtResource("2_kpmxi")]
+position = Vector2(6235, 321)
 
 [node name="bush" parent="." instance=ExtResource("2_kpmxi")]
 position = Vector2(88, 321)
