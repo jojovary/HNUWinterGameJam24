@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bt02wfefm3icm"]
+[gd_scene load_steps=20 format=3 uid="uid://bt02wfefm3icm"]
 
 [ext_resource type="Script" path="res://Scripte/enemyAI.gd" id="1_i85jl"]
 [ext_resource type="Texture2D" uid="uid://bfumfautjm32h" path="res://Sprites/WorkingSprites/Enemy_Zombie_Walk.png" id="3_b5lw7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cbg14bo8q07l7" path="res://Sprites/WorkingSprites/Enemy_Zombie_InAir.png" id="4_nrn46"]
 [ext_resource type="AudioStream" uid="uid://d0y70tud5rgpn" path="res://Audio/Qualvoller Schrei neu.wav" id="5_ve6wv"]
 [ext_resource type="AudioStream" uid="uid://newvs18ffofe" path="res://Audio/Qualvoller Schrei ohne FX neu.wav" id="6_oqdem"]
+[ext_resource type="PackedScene" uid="uid://bmjogckbp7nfp" path="res://Szenen/bloodsplatter_side.tscn" id="7_v6q71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_linvy"]
 height = 40.0
@@ -124,5 +125,9 @@ scale = Vector2(0.6, 1)
 
 [node name="EnemySoundManager" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamInteractive_hyced")
+
+[node name="blood" parent="." instance=ExtResource("7_v6q71")]
+visible = false
+position = Vector2(0, -5)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
