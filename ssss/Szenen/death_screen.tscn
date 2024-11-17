@@ -1,16 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgdrfjqaekkxi"]
+[gd_scene load_steps=10 format=3 uid="uid://dgdrfjqaekkxi"]
 
-[ext_resource type="Script" path="res://Scripte/death_screen.gd" id="1_plu8e"]
 [ext_resource type="Texture2D" uid="uid://cb156rg6le68g" path="res://Sprites/WorkingSprites/Background/Menu_Endscreen_BW.png" id="2_x1b2w"]
 [ext_resource type="FontFile" uid="uid://d0g3kk1x8fhaf" path="res://Sprites/Prototyping Assets/MGS2.ttf" id="2_xu8j4"]
 [ext_resource type="Texture2D" uid="uid://csms3e3xxwq5f" path="res://Sprites/WorkingSprites/Menu/StartGrey.png" id="4_1mdl3"]
 [ext_resource type="Texture2D" uid="uid://bpub174qi0ow0" path="res://Sprites/WorkingSprites/Menu/Start.png" id="5_g6w0a"]
 [ext_resource type="Texture2D" uid="uid://dlgu4he381gnv" path="res://Sprites/WorkingSprites/Menu/ExitGrey.png" id="6_4ue1a"]
+[ext_resource type="Script" path="res://Scripte/start.gd" id="6_l0ydj"]
 [ext_resource type="Texture2D" uid="uid://cov2s4hwvjl38" path="res://Sprites/WorkingSprites/Menu/Exit.png" id="7_8rt16"]
 [ext_resource type="Texture2D" uid="uid://du2k05q5h2ht0" path="res://Sprites/WorkingSprites/Background/Menu_GAMEOVER.png" id="8_12pe4"]
+[ext_resource type="Script" path="res://Scripte/quit_2.gd" id="9_366ui"]
 
 [node name="DeathScreen" type="Node2D"]
-script = ExtResource("1_plu8e")
 
 [node name="Background1" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -43,6 +43,7 @@ texture_pressed = ExtResource("5_g6w0a")
 texture_hover = ExtResource("5_g6w0a")
 texture_disabled = ExtResource("4_1mdl3")
 texture_focused = ExtResource("5_g6w0a")
+script = ExtResource("6_l0ydj")
 
 [node name="Quit2" type="TextureButton" parent="."]
 offset_left = 240.0
@@ -54,11 +55,12 @@ texture_pressed = ExtResource("7_8rt16")
 texture_hover = ExtResource("7_8rt16")
 texture_disabled = ExtResource("6_4ue1a")
 texture_focused = ExtResource("7_8rt16")
+script = ExtResource("9_366ui")
 
 [node name="Gameover" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(317, 134)
 texture = ExtResource("8_12pe4")
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Quit2" to="." method="_on_quit_2_pressed"]
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Quit2" to="Quit2" method="_on_pressed"]

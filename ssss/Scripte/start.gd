@@ -1,4 +1,4 @@
-extends Node2D
+extends TextureButton
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_area_2d_body_entered(body):
-	Global.bloodpoints = 230
-	if body.is_in_group("Player"):
-		get_tree().reload_current_scene()
+func _on_pressed():
+	get_tree().change_scene_to_file("res://Szenen/StartMenuSzene.tscn")
