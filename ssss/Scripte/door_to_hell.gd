@@ -1,5 +1,7 @@
 extends Area2D
 
+var bloodspltter = preload("res://Szenen/bloodsplatter_side_flipped.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,4 +10,4 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
-		print("blooooood")
+		$Node2D.blood()
