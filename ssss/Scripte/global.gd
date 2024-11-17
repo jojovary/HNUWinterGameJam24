@@ -7,7 +7,7 @@ var enemies = []
 var cage 
 var gamefinished = 0
 var cage_speed = 0
-var bloodpoints = 0
+var bloodpoints = 230
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +28,7 @@ func _process(delta: float):
 			var cager = get_node(cage)
 			enemy.changeState()
 			cager.increaseSpeed()
+			
 		# Reset the time and choose a new random wait time
 		time_passed = 0.0
 		wait_time = randf_range(1.0, 2.0)

@@ -12,4 +12,11 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("SLASH!" + str(body))
+	if body.is_in_group("Enemy"):
+		Global.enemies.erase(body.get_path())		##funktioniert, solange man den Cage nicht angreift
+		Global.enemies.resize(Global.enemies.size() - 1)
+		#print(Global.enemies)
+		
+		body.queue_free()		##funktioniert nicht wegen Change State
+		print("SLASH!" + str(body))
+		

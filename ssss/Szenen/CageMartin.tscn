@@ -1,24 +1,24 @@
-[gd_scene load_steps=13 format=4 uid="uid://dtw5hda1rjuby"]
+[gd_scene load_steps=12 format=4 uid="uid://kyespjvxjuod"]
 
-[ext_resource type="Script" path="res://Scripte/cage.gd" id="1_7021u"]
-[ext_resource type="Texture2D" uid="uid://bc4vbrd531s51" path="res://Sprites/WorkingSprites/Cage_Left.png" id="2_3qab1"]
-[ext_resource type="Texture2D" uid="uid://buwdudl1cfpbl" path="res://Sprites/WorkingSprites/Cage_Mid.png" id="3_fvwf4"]
-[ext_resource type="Texture2D" uid="uid://bsgw0wtb6xqn4" path="res://Sprites/WorkingSprites/Cage_Right.png" id="4_loawl"]
-[ext_resource type="PackedScene" uid="uid://brcd56u4l5i2s" path="res://Szenen/Gnome.tscn" id="5_wo1iv"]
-[ext_resource type="PackedScene" uid="uid://hp0o5ekw26mh" path="res://Szenen/BloodPointsUI.tscn" id="6_8oxjf"]
+[ext_resource type="Script" path="res://Scripte/cage.gd" id="1_b0u46"]
+[ext_resource type="PackedScene" uid="uid://brcd56u4l5i2s" path="res://Szenen/Gnome.tscn" id="2_l04vw"]
+[ext_resource type="Texture2D" uid="uid://bc4vbrd531s51" path="res://Sprites/WorkingSprites/Cage_Left.png" id="3_qipes"]
+[ext_resource type="Texture2D" uid="uid://buwdudl1cfpbl" path="res://Sprites/WorkingSprites/Cage_Mid.png" id="4_k5ufj"]
+[ext_resource type="Texture2D" uid="uid://bsgw0wtb6xqn4" path="res://Sprites/WorkingSprites/Cage_Right.png" id="5_2puhw"]
+[ext_resource type="PackedScene" uid="uid://hp0o5ekw26mh" path="res://Szenen/BloodPointsUI.tscn" id="6_ugwtm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13nl8"]
 size = Vector2(153, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73ak3"]
-texture = ExtResource("2_3qab1")
+texture = ExtResource("3_qipes")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 0:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mi2n"]
-texture = ExtResource("3_fvwf4")
+texture = ExtResource("4_k5ufj")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -29,7 +29,7 @@ texture = ExtResource("3_fvwf4")
 1:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df1jf"]
-texture = ExtResource("4_loawl")
+texture = ExtResource("5_2puhw")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
@@ -40,35 +40,32 @@ sources/0 = SubResource("TileSetAtlasSource_73ak3")
 sources/1 = SubResource("TileSetAtlasSource_5mi2n")
 sources/2 = SubResource("TileSetAtlasSource_df1jf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5cv"]
-size = Vector2(20, 492)
-
 [node name="Cage" type="AnimatableBody2D"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_7021u")
+script = ExtResource("1_b0u46")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("5_wo1iv")]
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_l04vw")]
 position = Vector2(-73, 11)
 frame = 1
 frame_progress = 0.0915301
 
-[node name="AnimatedSprite2D2" parent="." instance=ExtResource("5_wo1iv")]
+[node name="AnimatedSprite2D2" parent="." instance=ExtResource("2_l04vw")]
 position = Vector2(-25, 11)
 
-[node name="AnimatedSprite2D3" parent="." instance=ExtResource("5_wo1iv")]
+[node name="AnimatedSprite2D3" parent="." instance=ExtResource("2_l04vw")]
 position = Vector2(11, 11)
 
-[node name="AnimatedSprite2D4" parent="." instance=ExtResource("5_wo1iv")]
+[node name="AnimatedSprite2D4" parent="." instance=ExtResource("2_l04vw")]
 position = Vector2(63, 11)
 
-[node name="AnimatedSprite2D5" parent="." instance=ExtResource("5_wo1iv")]
+[node name="AnimatedSprite2D5" parent="." instance=ExtResource("2_l04vw")]
 position = Vector2(50, 11)
 
-[node name="AnimatedSprite2D6" parent="." instance=ExtResource("5_wo1iv")]
+[node name="AnimatedSprite2D6" parent="." instance=ExtResource("2_l04vw")]
 position = Vector2(33, 11)
 
-[node name="AnimatedSprite2D7" parent="." instance=ExtResource("5_wo1iv")]
+[node name="AnimatedSprite2D7" parent="." instance=ExtResource("2_l04vw")]
 position = Vector2(-9, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -83,11 +80,5 @@ position = Vector2(0, -4)
 tile_map_data = PackedByteArray("AAD7//3/AAAAAAAAAAD7//7/AAAAAAEAAAD7////AAAAAAIAAAD7/wAAAAAAAAMAAAAEAP3/AgAAAAAAAAAEAP7/AgAAAAEAAAAEAAAAAgAAAAMAAAAEAP//AgAAAAIAAAD8//3/AQAAAAAAAAD8//7/AQAAAAEAAAD8////AQAAAAIAAAD8/wAAAQAAAAMAAAD9//3/AQABAAAAAAD9//7/AQABAAEAAAD9////AQABAAIAAAD9/wAAAQABAAMAAAD+//3/AQAAAAAAAAD+//7/AQAAAAEAAAD+////AQAAAAIAAAD+/wAAAQAAAAMAAAD///3/AQABAAAAAAD///7/AQABAAEAAAD/////AQABAAIAAAD//wAAAQABAAMAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAEAAAAAAP//AQAAAAIAAAAAAAAAAQAAAAMAAAABAP3/AQABAAAAAAABAP7/AQABAAEAAAABAP//AQABAAIAAAABAAAAAQABAAMAAAACAP3/AQAAAAAAAAACAP7/AQAAAAEAAAACAP//AQAAAAIAAAACAAAAAQAAAAMAAAADAP3/AQABAAAAAAADAP7/AQABAAEAAAADAP//AQABAAIAAAADAAAAAQABAAMAAAA=")
 tile_set = SubResource("TileSet_p7lt8")
 
-[node name="BloodTimerUI" parent="." instance=ExtResource("6_8oxjf")]
+[node name="BloodTimerUI" parent="." instance=ExtResource("6_ugwtm")]
 position = Vector2(-500, -343)
-
-[node name="BloodPointsCheck" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BloodPointsCheck"]
-position = Vector2(-510, -183)
-shape = SubResource("RectangleShape2D_gv5cv")

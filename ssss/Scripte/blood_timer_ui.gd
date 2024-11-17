@@ -5,11 +5,12 @@ extends Node2D
 @onready var texture_progress = $BloodTimerBar
 @onready var label = $BloodTimerLabel
 @onready var percentage_of_time
-@onready var global_bloodpoints = 230
+@onready var global_bloodpoints
+@onready var blood_pressure = Global.bloodpoints
 
-func _process(delta):
-	texture_progress.set_value(global_bloodpoints) 
-	
+func _physics_process(delta):
+	texture_progress.set_value(Global.bloodpoints) 
+	#print(global_bloodpoints)
 	
 	#if timer.get_time_left() > 0:
 		#percentage_of_time = ((1-timer.get_time_left()/timer.get_wait_time())*100)
