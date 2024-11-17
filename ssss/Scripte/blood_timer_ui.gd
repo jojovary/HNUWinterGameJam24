@@ -13,7 +13,6 @@ func _process(delta):
 	var use_int = int(percentage_of_time)
 	label.text = str(use_int) + "%"
 	texture_progress.set_value(timer.get_time_left())  
-	print(percentage_of_time)
 #func _on_Button_pressed():
 	#if canfire:
 		#canfire = false

@@ -4,7 +4,6 @@ var speed = 50.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 enum state {CAGE,FLEETING,ANGRY, ATTACKING, JUMP, BACKTOHELL}
 var currentState = state.CAGE
-var launched = false
 
 func _ready():
 	Global.enemies.append(self.get_path())
@@ -12,25 +11,24 @@ func _ready():
 
 
 func _physics_process(delta):
-	directionFlip()
+	
 	
 	if currentState == state.CAGE:
 		miseryInCage(delta)
-	elif currentState == state.FLEETING:
+	
+	if currentState == state.FLEETING:
 		flee(delta)
-	elif currentState == state.JUMP:
+	
+	if currentState == state.JUMP:
 		launch(delta)
-	elif currentState == state.BACKTOHELL:
+	
+	if currentState == state.BACKTOHELL:
 		highway_to_hell(delta)
 	
-	
+	directionFlip()
 	move_and_slide()
 
-func changeState():
-	currentState = state.JUMP
-	launched = false
-	$".".set_collision_mask_value(3,false)
-	Global.enemies.erase(self.get_path())
+
 
 func flee(delta):
 	if not is_on_floor():
@@ -49,12 +47,16 @@ func miseryInCage(delta):
 	
 	velocity.x = speed
 
+func changeState():
+	$".".set_collision_mask_value(3,false)
+	Global.enemies.erase(self.get_path())
+	$ZombieSprite.visible = true
+	$FlyingSprite.visible = false
+	velocity.y = randf_range(-400,-700 )
+	velocity.x = randf_range(-100,-200)
+	currentState = state.JUMP
+
 func launch(delta):
-	
-	if launched == false:
-			velocity.y = randf_range(-400,-700 )
-			velocity.x = randf_range(-100,-200)
-			launched = true
 	 # while the player is jumping gravity should affect him
 	if not is_on_floor():
 		velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
@@ -62,32 +64,28 @@ func launch(delta):
 	directionFlip()
 		#enables the player to jump while he is not in the air and pressing the according button
 	if is_on_floor():
+		$ZombieSprite.visible = true
+		$FlyingSprite.visible = false
 		currentState = state.FLEETING
 
 func back_to_hell():
-	currentState = state.BACKTOHELL
-	launched = false
+	velocity.y = -600
+	velocity.x = Global.cage_speed + 150
 	$ZombieSprite.visible = false
 	$FlyingSprite.visible = true
 	$".".set_collision_mask_value(3,true)
-	Global.enemies.append(self.get_path())
-
-
+	currentState = state.BACKTOHELL
 
 func highway_to_hell(delta):
-	 # while the player is jumping gravity should affect him
-	if launched == false:
-			velocity.y = -600
-			velocity.x = Global.cage_speed + 150
-			launched = true
-	
 	if not is_on_floor():
 		velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
 	
 	directionFlip()
 		#enables the player to jump while he is not in the air and pressing the according button
 	if is_on_floor():
+		#ONLY IF IN CAGE!!!!!!!!!!!!!!!!!!!!!!!
 		currentState = state.CAGE
+		Global.enemies.append(self.get_path())
 		$ZombieSprite.visible = true
 		$FlyingSprite.visible = false
 		
