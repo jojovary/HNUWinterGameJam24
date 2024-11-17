@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bt02wfefm3icm"]
+[gd_scene load_steps=17 format=3 uid="uid://bt02wfefm3icm"]
 
 [ext_resource type="Script" path="res://Scripte/enemyAI.gd" id="1_i85jl"]
 [ext_resource type="Texture2D" uid="uid://bfumfautjm32h" path="res://Sprites/WorkingSprites/Enemy_Zombie_Walk.png" id="3_b5lw7"]
 [ext_resource type="Script" path="res://Scripte/zombie_sprite.gd" id="4_1fpno"]
 [ext_resource type="Texture2D" uid="uid://cbg14bo8q07l7" path="res://Sprites/WorkingSprites/Enemy_Zombie_InAir.png" id="4_nrn46"]
+[ext_resource type="PackedScene" uid="uid://bmjogckbp7nfp" path="res://Szenen/bloodsplatter_side.tscn" id="5_fcuyy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_linvy"]
 height = 40.0
@@ -105,10 +106,14 @@ collide_with_areas = true
 visible = false
 sprite_frames = SubResource("SpriteFrames_2va81")
 animation = &"fly"
-frame_progress = 0.89305
+frame = 1
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(0.6, 1)
+
+[node name="blood" parent="." instance=ExtResource("5_fcuyy")]
+visible = false
+position = Vector2(0, -7)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
