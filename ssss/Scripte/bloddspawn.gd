@@ -15,11 +15,13 @@ func blood():
 		var rando = randi_range(0,3)
 		if rando < 3:
 			var blood = bloodsplatter.instantiate()
+			add_child(blood)
 			get_tree().current_scene.add_child(blood)
 			i.global_position.y =  i.global_position.y + randf_range(-1,3)
 			blood.global_position = i.global_position
 		else:
 			var blood = bloodsplatter2.instantiate()
+			add_child(blood)
 			get_tree().current_scene.add_child(blood)
 			i.global_position.y =  i.global_position.y + randf_range(-2,2)
 			blood.global_position = i.global_position

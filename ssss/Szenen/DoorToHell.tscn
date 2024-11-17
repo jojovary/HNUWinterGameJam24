@@ -1,36 +1,37 @@
-[gd_scene load_steps=10 format=3 uid="uid://ts6a0d2kqdka"]
+[gd_scene load_steps=11 format=3 uid="uid://ts6a0d2kqdka"]
 
 [ext_resource type="Script" path="res://Scripte/door_to_hell.gd" id="1_8i58v"]
-[ext_resource type="Texture2D" uid="uid://2ap1f138dh7r" path="res://Sprites/WorkingSprites/Enviroment/MouthOfMadness_Anim.png" id="1_jd3en"]
+[ext_resource type="Texture2D" uid="uid://cb52vh6q5rgvt" path="res://Sprites/WorkingSprites/Enviroment/mouthofmadnessspritesfg.png" id="2_jflrh"]
+[ext_resource type="Texture2D" uid="uid://dyyed8yeojilr" path="res://Sprites/WorkingSprites/mouthofmadnessspritesbg1 (1).png" id="2_rthny"]
 [ext_resource type="Script" path="res://Scripte/bloddspawn.gd" id="3_ri61v"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fr68c"]
-atlas = ExtResource("1_jd3en")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b5vm"]
+atlas = ExtResource("2_jflrh")
 region = Rect2(0, 0, 256, 176)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jv1i2"]
-atlas = ExtResource("1_jd3en")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbgrt"]
+atlas = ExtResource("2_jflrh")
 region = Rect2(256, 0, 256, 176)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ruje"]
-atlas = ExtResource("1_jd3en")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygww8"]
+atlas = ExtResource("2_jflrh")
 region = Rect2(512, 0, 256, 176)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_futyi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fr68c")
+"texture": SubResource("AtlasTexture_8b5vm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jv1i2")
+"texture": SubResource("AtlasTexture_vbgrt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6ruje")
+"texture": SubResource("AtlasTexture_ygww8")
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wa23p"]
@@ -44,9 +45,25 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_8i58v")
 
+[node name="Mouthofmadnessspritesbg1" type="Sprite2D" parent="."]
+position = Vector2(-78, 39)
+texture = ExtResource("2_rthny")
+
+[node name="bloodspawn" type="Node2D" parent="."]
+script = ExtResource("3_ri61v")
+
+[node name="Marker2D" type="Marker2D" parent="bloodspawn"]
+position = Vector2(-66, 30)
+
+[node name="Marker2D3" type="Marker2D" parent="bloodspawn"]
+position = Vector2(-69, 43)
+
+[node name="Marker2D2" type="Marker2D" parent="bloodspawn"]
+position = Vector2(-63, 61)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_futyi")
-frame_progress = 0.276141
+frame_progress = 0.13753
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(21, 36.5)
@@ -55,17 +72,5 @@ shape = SubResource("RectangleShape2D_wa23p")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-39, -32)
 shape = SubResource("RectangleShape2D_8yj0b")
-
-[node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("3_ri61v")
-
-[node name="Marker2D" type="Marker2D" parent="Node2D"]
-position = Vector2(-70, 30)
-
-[node name="Marker2D3" type="Marker2D" parent="Node2D"]
-position = Vector2(-70, 43)
-
-[node name="Marker2D2" type="Marker2D" parent="Node2D"]
-position = Vector2(-70, 58)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

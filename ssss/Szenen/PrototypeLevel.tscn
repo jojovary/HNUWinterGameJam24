@@ -112,4 +112,4 @@ position = Vector2(384, 328)
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="DoorToHell" parent="." instance=ExtResource("6_k2s3d")]
-position = Vector2(880, 280)
+position = Vector2(824, 280)
