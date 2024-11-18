@@ -21,11 +21,14 @@ func _ready():
 
 # Called every frame. Delta is the elapsed time since the last frame.
 func _process(delta: float):
-	#print(bloodpoints)
-	##gameover check
-	_game_over()
 	# Accumulate the time passed
 	time_passed += delta
+	
+	if bloodpoints == 0:
+		_game_over()
+		print("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+		return
+	print("WTF")
 	
 	if get_tree().current_scene != null:
 		#print(get_tree().current_scene.name)
@@ -39,6 +42,7 @@ func _process(delta: float):
 		# release human
 		if enemies.size() > 0:
 			#print(enemies[randi_range(0,enemies.size()-1)])
+			
 			var enemy = get_node(enemies[randi_range(0,enemies.size()-1)])
 			var cager = get_node(cage)
 			print(enemies)
@@ -51,7 +55,9 @@ func _process(delta: float):
 		time_passed = 0.0
 		wait_time = randf_range(1.0, 2.0)
 		
-		
+
+
+
 func _game_over():
-	if bloodpoints == 0:
-		get_tree().change_scene_to_file("res://Szenen/death_screen.tscn")
+	bloodpoints = 1
+	get_tree().change_scene_to_file("res://Szenen/death_screen.tscn")

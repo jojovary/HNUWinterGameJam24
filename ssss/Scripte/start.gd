@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
+	print("soihdkjahsdkjhakjshdkakushdkjahs")
 	get_tree().change_scene_to_file("res://Szenen/StartMenuSzene.tscn")

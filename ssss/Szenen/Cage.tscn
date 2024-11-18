@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bsgw0wtb6xqn4" path="res://Sprites/WorkingSprites/Cage_Right.png" id="4_loawl"]
 [ext_resource type="PackedScene" uid="uid://brcd56u4l5i2s" path="res://Szenen/Gnome.tscn" id="5_wo1iv"]
 [ext_resource type="PackedScene" uid="uid://hp0o5ekw26mh" path="res://Szenen/BloodPointsUI.tscn" id="6_8oxjf"]
-[ext_resource type="PackedScene" uid="uid://cql4wlvpa7oy8" path="res://Szenen/death_zone.tscn" id="7_t5qli"]
+[ext_resource type="PackedScene" path="res://Szenen/death_zone.tscn" id="7_t5qli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13nl8"]
 size = Vector2(144, 4)
