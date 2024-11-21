@@ -13,8 +13,8 @@ func _physics_process(delta: float) -> void:
 	
 	if position.x < 6120:
 		$".".position +=  direction * delta
-	else:
-		get_tree().change_scene_to_file("res://Szenen/endlevel_screen.tscn")
+	elif $Timer.is_stopped():
+		$Timer.start()
 
 func increaseSpeed():
 	direction.x += peopleWeight
@@ -23,3 +23,7 @@ func increaseSpeed():
 func decreaseSpeed():
 	direction.x -= peopleWeight
 	Global.cage_speed = direction.x
+
+
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://Szenen/endlevel_screen.tscn")

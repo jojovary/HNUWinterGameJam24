@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bsgw0wtb6xqn4" path="res://Sprites/WorkingSprites/Cage_Right.png" id="4_loawl"]
 [ext_resource type="PackedScene" uid="uid://brcd56u4l5i2s" path="res://Szenen/Gnome.tscn" id="5_wo1iv"]
 [ext_resource type="PackedScene" uid="uid://hp0o5ekw26mh" path="res://Szenen/BloodPointsUI.tscn" id="6_8oxjf"]
-[ext_resource type="PackedScene" path="res://Szenen/death_zone.tscn" id="7_t5qli"]
+[ext_resource type="PackedScene" uid="uid://cql4wlvpa7oy8" path="res://Szenen/death_zone.tscn" id="7_t5qli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13nl8"]
 size = Vector2(144, 4)
@@ -97,4 +97,9 @@ position = Vector2(-500, -343)
 position = Vector2(-510, -183)
 shape = SubResource("RectangleShape2D_gv5cv")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.657
+one_shot = true
+
 [connection signal="body_entered" from="BloodPointsCheck" to="." method="_on_blood_points_check_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -26,9 +26,7 @@ func _process(delta: float):
 	
 	if bloodpoints == 0:
 		_game_over()
-		print("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 		return
-	print("WTF")
 	
 	if get_tree().current_scene != null:
 		#print(get_tree().current_scene.name)
